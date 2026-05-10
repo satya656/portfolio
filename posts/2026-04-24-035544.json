@@ -1,0 +1,46 @@
+{
+  "title": "Why Your Roadmap Just Got Shorter: AI's 90-Day Product Cycle",
+  "tldr": [
+    "AI agents now ship features while you sleep",
+    "Customer research happens in real-time with voice AI",
+    "Your technical debt is becoming an AI training dataset"
+  ],
+  "intro": "Three months used to be a sprint. Now it's a product generation. The AI tools launching this quarter aren't just faster versions of what we had. They're changing how fast we can validate ideas, ship features, and learn from users.\n\nIf you're still planning in quarters, you're planning too slow. Here are the trends that just compressed your product timeline.",
+  "sections": [
+    {
+      "trend": "🤖 Autonomous Feature Development",
+      "what": "AI agents can now write, test, and deploy code changes without human intervention. GitHub's new Copilot Workspace and similar tools from Cursor and Replit let you describe a feature in plain English. The AI writes the code, creates tests, handles edge cases, and even submits pull requests.\n\nThis isn't just autocomplete anymore. These systems understand your codebase architecture, follow your team's patterns, and can refactor existing code to accommodate new features. They're basically junior developers that work 24/7 and never get tired.",
+      "pmImpact": "Your bottleneck just shifted from engineering bandwidth to feature validation. When you can prototype and test ideas in hours instead of weeks, the constraint becomes knowing what to build, not how to build it.\n\nThis means product discovery becomes your most critical skill. You need tighter feedback loops with users and clearer success metrics upfront. The cost of building the wrong thing just got much lower, but the opportunity cost of not building the right thing got much higher.",
+      "example": "Linear shipped 12 new features last month using AI-generated code for 80% of the implementation. Their PM team now spends more time talking to users than writing tickets.",
+      "action": "Pick your smallest backlog item and describe it to Claude or ChatGPT in detail. See how much of the implementation you can generate, then time how long it takes your engineer to review and ship it."
+    },
+    {
+      "trend": "🎙️ Real-Time Voice User Research",
+      "what": "Voice AI can now conduct user interviews that feel completely natural. Tools like UserVoice and Otter's new research features can run 50 customer conversations simultaneously, each tailored to different user personas or use cases.\n\nThe AI adapts its questions based on user responses, follows up on interesting points, and synthesizes insights across all conversations. What used to take weeks of scheduling, conducting, and analyzing interviews now happens overnight.",
+      "pmImpact": "You can now validate ideas with hundreds of users before your next standup. The traditional user research waterfall (plan, recruit, interview, analyze, present) collapses into continuous feedback loops.\n\nThis changes how you think about MVPs and feature flags. Instead of shipping and hoping, you can test concepts with statistically significant user groups before writing a single line of code. Your confidence in product decisions just went way up.",
+      "example": "Notion tested their new AI writing assistant with 300 users over a weekend using voice interviews. They discovered users wanted formatting suggestions more than grammar fixes, pivoting the feature before launch.",
+      "action": "Write three questions about your next feature and use ElevenLabs or similar to create a voice interview bot. Send it to 10 users this week and compare the insights to your assumptions."
+    },
+    {
+      "trend": "📊 Predictive Product Analytics",
+      "what": "AI can now predict user behavior 30-90 days out with scary accuracy. New models from Amplitude, Mixpanel, and internal tools can tell you which users will churn, which features will drive retention, and what your growth curve will look like next quarter.\n\nThese aren't just correlation dashboards. The AI identifies causal relationships in your product data and suggests interventions. It's like having a data scientist who never sleeps and can process every user action across your entire product simultaneously.",
+      "pmImpact": "Product planning becomes proactive instead of reactive. You can see problems before they happen and fix them before users notice. Your roadmap decisions get backed by predictions, not just historical data.\n\nThis also means you can run experiments with much smaller sample sizes. The AI can extrapolate results and predict long-term impact from short-term signals. Your experiment velocity just multiplied.",
+      "example": "Spotify's AI predicted a 40% drop in podcast engagement two weeks before it happened. They shipped three retention features and maintained flat engagement while competitors declined.",
+      "action": "Connect your product analytics to Claude or ChatGPT via API. Ask it to identify patterns in your top user actions and predict what might drive retention next month."
+    },
+    {
+      "trend": "🔧 Technical Debt as Training Data",
+      "what": "AI models now treat your legacy code as a goldmine for understanding user needs and technical constraints. Tools like Sourcegraph Cody and GitHub Copilot can analyze your entire codebase to suggest architectural improvements and identify unused features.\n\nThe AI doesn't just find bugs. It maps how users actually interact with your product by analyzing code paths, database queries, and API calls. It can tell you which features are truly essential and which ones are just taking up space.",
+      "pmImpact": "You finally have objective data about feature usage at the code level. No more guessing which parts of your product actually matter to users. The AI can show you exactly how each feature performs and what happens when users hit edge cases.\n\nThis changes how you prioritize technical debt. Instead of engineering-driven cleanup, you get user-impact-driven refactoring. Your engineering team can finally make the case for architectural changes with product metrics, not just technical arguments.",
+      "example": "Figma used AI analysis to discover that 60% of their advanced prototyping features were never used in published prototypes. They simplified the UI and saw a 25% increase in feature adoption.",
+      "action": "Run Sourcegraph or similar against your main repository and ask it to identify the top 10 code paths users never hit. Review with your engineering team to see what can be removed or simplified."
+    }
+  ],
+  "closing": "The product management playbook just rewrote itself. The PMs who adapt to these shorter cycles and faster feedback loops will build products that feel magical to users. The ones who stick to quarterly planning will ship features that were relevant three months ago.\n\nStart small. Pick one trend and run a quick experiment this week. Your future self (and your users) will thank you.",
+  "takeaway": "In AI-accelerated product development, the biggest risk isn't moving too fast—it's moving too slow.",
+  "postType": "trends",
+  "slug": "why-your-roadmap-just-got-shorter-ais-90-day-product-cycle",
+  "generatedAt": "2026-04-24T07:56:26.109Z",
+  "status": "draft",
+  "wordCount": 173
+}

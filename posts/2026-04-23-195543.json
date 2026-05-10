@@ -1,0 +1,53 @@
+{
+  "title": "Four AI Trends Reshaping Product Work Right Now",
+  "tldr": [
+    "AI agents are handling complex workflows, not just single tasks",
+    "Real-time model switching lets products adapt instantly to user needs",
+    "Voice interfaces are finally ready for serious product integration"
+  ],
+  "intro": "The AI product landscape shifted hard in Q2 2026. We moved past the experimental phase into tools that actually change how products get built and used. Four trends are hitting product teams right now, and they're not the obvious ones. These aren't about ChatGPT getting slightly better at writing emails. They're about fundamental changes in what users expect and how we deliver it.",
+  "sections": [
+    {
+      "trend": "🤖 Agent Orchestration Platforms",
+      "what": "AI agents now coordinate with each other to handle complex workflows. Instead of one model doing one task, multiple specialized agents work together. OpenAI's new Agent Framework and Anthropic's Claude Teams let you chain agents that research, analyze, write, and execute decisions across multiple steps. The breakthrough is reliable handoffs between agents without human intervention.",
+      "pmImpact": "This changes product architecture completely. You're no longer building features, you're designing agent workflows. User stories become agent collaboration patterns. Your roadmap needs to account for which processes can be fully automated versus where humans add unique value. Product requirements shift from \"what should this button do\" to \"what outcome should this workflow achieve.\"",
+      "example": "Notion's new AI workspace uses three coordinated agents: one for research, one for writing, and one for formatting. Users describe a project goal, and the agents collaborate to deliver a complete brief without additional prompts.",
+      "action": "Map one core user workflow in your product and identify which steps could be handled by different specialized agents instead of manual user actions."
+    },
+    {
+      "trend": "⚡ Dynamic Model Routing",
+      "what": "Products now switch between AI models in real-time based on the specific request. Simple questions hit fast, cheap models. Complex reasoning routes to expensive, powerful ones. Google's new Gemini Router and Meta's Llama Switch make this seamless. Users get optimal responses without thinking about which model they're using. Cost optimization happens automatically.",
+      "pmImpact": "Your AI features can now be both fast and smart without choosing one or the other. Product metrics change because user satisfaction isn't tied to a single model's capabilities. You optimize for outcome quality per dollar spent, not model performance in isolation. Feature planning becomes about orchestrating the right intelligence level for each use case.",
+      "example": "Superhuman's email assistant routes simple replies through a lightweight model for speed, but switches to GPT-4o for complex scheduling or sensitive communications. Users see consistent quality with 60% lower latency.",
+      "action": "Audit your current AI features and identify which could benefit from routing simple requests to faster models while preserving quality for complex ones."
+    },
+    {
+      "trend": "🎙️ Production-Ready Voice Interfaces",
+      "what": "Voice AI finally works reliably in noisy environments with natural interruptions and context switching. OpenAI's new Whisper-3 and ElevenLabs' conversational models handle real conversations, not just commands. Latency dropped to near-human response times. Background noise processing improved dramatically. Voice interfaces are becoming the primary interaction method for specific workflows.",
+      "pmImpact": "Voice changes product flows entirely. Screen-based thinking doesn't translate. You design for conversation, not clicks. User onboarding becomes explanation, not tutorial. Error handling shifts from error messages to clarifying questions. Analytics move from pageviews to conversation quality metrics. Mobile-first thinking becomes voice-first thinking.",
+      "example": "Linear's voice issue creation lets developers describe bugs while looking at code. The AI creates properly formatted issues with relevant labels and assignees based on natural speech, no form filling required.",
+      "action": "Pick one frequent user task in your product and prototype how it would work as a voice conversation instead of a series of clicks."
+    },
+    {
+      "trend": "📊 Real-Time Behavioral Personalization",
+      "what": "AI now personalizes products based on immediate user behavior, not historical data. Models analyze current session patterns, attention, and interaction styles to adapt the interface in real-time. Microsoft's new Adaptive UI framework and Vercel's AI personalization tools make this accessible to any product team. The experience changes as you use it, not after you use it.",
+      "pmImpact": "Traditional A/B testing becomes less relevant when every user gets a unique experience. Product analytics shift from cohort analysis to individual journey optimization. Feature flags become AI decisions, not PM decisions. You design systems that learn, not static experiences. User research focuses on behavioral patterns, not preference surveys.",
+      "example": "Figma's AI interface adapts tool placement and shortcuts based on how designers work in real-time. Heavy prototypers see different layouts than illustration-focused users, adjusted within minutes of starting a new project.",
+      "action": "Identify one area of your product where user behavior varies significantly and explore how the interface could adapt automatically to match different working styles."
+    },
+    {
+      "trend": "🔄 Continuous Product Intelligence",
+      "what": "AI analyzes product usage, support tickets, and user feedback continuously to suggest product changes. Instead of quarterly reviews, you get daily insights about what's breaking and what users actually want. Tools like Amplitude's AI Insights and PostHog's new prediction engine surface patterns humans miss. Product decisions become data-driven in real-time, not in retrospect.",
+      "pmImpact": "Your role shifts from gathering insights to acting on them. Product roadmaps become more fluid because you spot trends weeks earlier. Feature prioritization gets objective scoring based on predicted impact. User research supplements AI analysis instead of driving it. You spend less time wondering what to build and more time deciding how to build it.",
+      "example": "Stripe's AI product intelligence identified that checkout abandonment spiked specifically on mobile Safari during payment method selection. The insight led to a mobile-specific UX change that reduced abandonment by 23% within two weeks.",
+      "action": "Set up one automated analysis of your product data that runs weekly and flags unusual patterns or opportunities you might miss in manual reviews."
+    }
+  ],
+  "closing": "These trends are happening now, not someday. The product teams adopting them are building competitive advantages that compound weekly. The question isn't whether AI will change product management. It's whether you'll lead the change in your organization or react to it. The tools exist today. The user expectations are shifting. The only variable is how quickly you move.",
+  "takeaway": "AI isn't making product management easier, it's making it completely different.",
+  "postType": "trends",
+  "slug": "four-ai-trends-reshaping-product-work-right-now",
+  "generatedAt": "2026-04-23T23:56:27.309Z",
+  "status": "draft",
+  "wordCount": 169
+}

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Top Product Leader - Google Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: arial, sans-serif;
+      background: #fff;
+      color: #202124;
+      font-size: 14px;
+    }
+
+    a { text-decoration: none; }
+
+    /* ── TOP NAV ── */
+    .g-topnav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 8px 20px;
+      gap: 16px;
+      border-bottom: 1px solid #ebebeb;
+      font-size: 13px;
+    }
+    .g-topnav a {
+      color: #5f6368;
+      font-size: 13px;
+    }
+    .g-topnav a:hover { text-decoration: underline; color: #202124; }
+    .g-topnav-left {
+      display: flex;
+      gap: 20px;
+      margin-right: auto;
+    }
+    .g-signin {
+      background: #1a73e8;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .g-signin:hover { background: #1557b0; text-decoration: none !important; }
+
+    /* ── HEADER ── */
+    .g-header {
+      padding: 16px 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .g-logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .g-logo img {
+      height: 54px;
+      width: auto;
+    }
+
+    .g-searchbar-wrap { display: flex; align-items: center; gap: 12px; flex: 1; max-width: 580px; }
+    .g-searchbar {
+      display: flex;
+      align-items: center;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      padding: 8px 16px;
+      gap: 10px;
+      flex: 1;
+      box-shadow: 0 1px 6px rgba(32,33,36,.1);
+    }
+    .g-searchbar:hover { box-shadow: 0 1px 6px rgba(32,33,36,.2); }
+    .g-searchbar input {
+      border: none; outline: none;
+      font-size: 16px; color: #202124;
+      flex: 1; background: transparent;
+      font-family: arial, sans-serif;
+    }
+    .g-searchbar svg { width: 18px; height: 18px; color: #70757a; flex-shrink: 0; }
+    .g-searchbar .mic-icon { color: #4285F4; }
+    .g-search-btn {
+      background: #f8f9fa;
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: #202124;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .g-search-btn:hover { box-shadow: 0 1px 3px rgba(0,0,0,.2); border-color: #dadce0; color: #202124; }
+
+    /* ── RESULT TABS ── */
+    .g-tabs {
+      display: flex;
+      align-items: center;
+      padding: 6px 20px 0 174px;
+      border-bottom: 1px solid #ebebeb;
+      margin-top: 10px;
+    }
+    .g-tab {
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #5f6368;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      display: flex; align-items: center; gap: 5px;
+      white-space: nowrap;
+    }
+    .g-tab.active { color: #1a73e8; border-bottom-color: #1a73e8; font-weight: 500; }
+    .g-tab:hover:not(.active) { color: #202124; border-bottom-color: #ddd; }
+    .g-tab svg { width: 14px; height: 14px; }
+    .g-tab-sep { margin-left: auto; border-left: 1px solid #ebebeb; padding-left: 14px; }
+
+    /* ── MAIN LAYOUT ── */
+    .g-body {
+      display: flex;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── LEFT SIDEBAR ── */
+    .g-sidebar {
+      width: 154px;
+      flex-shrink: 0;
+      padding: 18px 30px 0 0;
+    }
+    .g-sidebar-photo {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 2px solid #dadce0;
+      position: relative;
+    }
+    .g-sidebar-photo img {
+      position: absolute;
+      width: 155%;
+      height: auto;
+      top: -10px;
+      left: -24px;
+    }
+    .g-sidebar-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #202124;
+      margin-bottom: 2px;
+    }
+    .g-sidebar-title {
+      font-size: 11px;
+      color: #5f6368;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+    .g-sidebar-contact {
+      font-size: 12px;
+      color: #4d5156;
+      line-height: 1.9;
+      margin-bottom: 14px;
+      border-top: 1px solid #ebebeb;
+      padding-top: 12px;
+    }
+    .g-sidebar-contact a { color: #1a0dab; }
+    .g-sidebar-contact a:hover { text-decoration: underline; }
+    .g-sidebar-section {
+      font-size: 11px;
+      font-weight: 700;
+      color: #70757a;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin: 12px 0 6px;
+      border-top: 1px solid #ebebeb;
+      padding-top: 12px;
+    }
+    .g-sidebar-item {
+      font-size: 12px;
+      color: #4d5156;
+      line-height: 1.8;
+    }
+    .g-sidebar-item strong { color: #202124; }
+
+    /* ── RESULTS COLUMN ── */
+    .g-results {
+      flex: 1;
+      min-width: 0;
+      padding: 12px 0 40px 20px;
+      max-width: 660px;
+    }
+
+    .g-result-count {
+      font-size: 13px;
+      color: #70757a;
+      margin-bottom: 18px;
+    }
+
+    /* ── INDIVIDUAL RESULT ── */
+    .g-result {
+      margin-bottom: 30px;
+    }
+    .g-result-url-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .g-favicon {
+      width: 16px; height: 16px; border-radius: 2px;
+      flex-shrink: 0; object-fit: contain;
+    }
+
+    /* ── DID YOU MEAN ── */
+    .g-did-you-mean {
+      font-size: 15px; color: #70757a;
+      margin-bottom: 10px;
+    }
+    .g-did-you-mean a { color: #1a0dab; font-style: italic; font-weight: 500; }
+    .g-did-you-mean a:hover { text-decoration: underline; }
+
+    /* ── CTA BANNER ── */
+    .g-cta {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+      background: #e8f0fe;
+      border: 1px solid #c5d8fd;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 18px;
+    }
+    .g-cta-text { font-size: 13px; color: #202124; line-height: 1.5; }
+    .g-cta-text strong { color: #1a73e8; }
+    .g-cta-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .g-cta-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 14px; border-radius: 4px; font-size: 13px;
+      font-weight: 500; cursor: pointer; white-space: nowrap;
+      text-decoration: none;
+    }
+    .g-cta-btn.primary { background: #1a73e8; color: #fff; border: 1px solid #1a73e8; }
+    .g-cta-btn.primary:hover { background: #1557b0; }
+    .g-cta-btn.secondary { background: #fff; color: #1a73e8; border: 1px solid #dadce0; }
+    .g-cta-btn.secondary:hover { background: #f8f9fa; border-color: #1a73e8; }
+
+    /* ── KEYWORDS ── */
+    .g-keywords {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #ebebeb;
+    }
+    .g-kw {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: #f8f9fa; border: 1px solid #dadce0;
+      border-radius: 14px; padding: 4px 12px;
+      font-size: 12px; color: #202124; cursor: pointer; white-space: nowrap;
+    }
+    .g-kw:hover { background: #e8f0fe; border-color: #1a73e8; color: #1a73e8; }
+    .g-kw-icon { font-size: 11px; }
+    .g-url-text { font-size: 14px; color: #202124; }
+    .g-url-crumb { font-size: 12px; color: #70757a; }
+    .g-result-title {
+      font-size: 20px;
+      font-weight: 400;
+      color: #1a0dab;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      cursor: pointer;
+    }
+    .g-result-title:hover { text-decoration: underline; }
+    .g-result-snippet {
+      font-size: 14px;
+      color: #4d5156;
+      line-height: 1.6;
+    }
+    .g-result-snippet strong { color: #202124; font-weight: 700; }
+    .g-result-date { color: #70757a; }
+
+    /* Expanded detail block */
+    .g-detail {
+      margin-top: 10px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .g-detail-head {
+      background: #f8f9fa;
+      border-bottom: 1px solid #dadce0;
+      padding: 10px 14px;
+      font-size: 12px;
+      color: #5f6368;
+    }
+    .g-exp-row {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+    .g-exp-row:last-child { border-bottom: none; }
+    .g-exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 5px;
+    }
+    .g-exp-role { font-size: 14px; font-weight: 500; color: #202124; }
+    .g-exp-co { font-size: 13px; color: #1a73e8; }
+    .g-exp-date { font-size: 12px; color: #70757a; white-space: nowrap; }
+    .g-bullets { list-style: none; padding: 0; }
+    .g-bullets li {
+      font-size: 13px; color: #4d5156;
+      padding: 2px 0 2px 14px; position: relative; line-height: 1.55;
+    }
+    .g-bullets li::before { content: '·'; position: absolute; left: 3px; color: #70757a; }
+    .g-bullets li strong { color: #202124; }
+
+    /* ── FEATURED SNIPPET ── */
+    .g-featured {
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 28px;
+    }
+    .g-featured-label {
+      font-size: 11px; color: #70757a; text-transform: uppercase;
+      letter-spacing: .5px; margin-bottom: 12px;
+    }
+    .g-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .g-stat-box {
+      background: #f8f9fa; border-radius: 6px;
+      text-align: center; padding: 10px 6px;
+      border: 1px solid #e8eaed;
+    }
+    .g-stat-box .n {
+      font-size: 1.5rem; font-weight: 700;
+      color: #1a73e8; line-height: 1;
+    }
+    .g-stat-box .l {
+      font-size: .68rem; color: #70757a;
+      margin-top: 3px; line-height: 1.3;
+    }
+    .g-featured-src { font-size: 12px; color: #70757a; margin-top: 8px; }
+
+    /* ── PEOPLE ALSO ASK ── */
+    .g-paa { border: 1px solid #dadce0; border-radius: 8px; margin-bottom: 28px; overflow: hidden; }
+    .g-paa-head { font-size: 15px; font-weight: 500; padding: 12px 14px; color: #202124; background: #f8f9fa; border-bottom: 1px solid #dadce0; }
+    .g-paa-item { border-bottom: 1px solid #dadce0; }
+    .g-paa-item:last-child { border-bottom: none; }
+    .g-paa-q {
+      padding: 12px 14px; font-size: 14px; color: #202124;
+      cursor: pointer; display: flex; justify-content: space-between;
+      align-items: center; gap: 10px;
+    }
+    .g-paa-q:hover { background: #f8f9fa; }
+    .g-paa-q svg { width: 18px; height: 18px; color: #70757a; flex-shrink: 0; transition: transform .2s; }
+    .g-paa-item.open .g-paa-q svg { transform: rotate(180deg); }
+    .g-paa-ans { display: none; padding: 0 14px 12px; font-size: 13px; color: #4d5156; line-height: 1.6; }
+    .g-paa-item.open .g-paa-ans { display: block; }
+
+    /* ── METRICS INSIDE RESULT ── */
+    .g-metric-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 8px; padding: 12px 14px;
+    }
+    .g-metric-box {
+      background: #f8f9fa; border-radius: 6px;
+      text-align: center; padding: 10px 6px;
+      border: 1px solid #e8eaed;
+    }
+    .g-metric-box .mn { font-size: 1.3rem; font-weight: 700; color: #1a73e8; line-height: 1; }
+    .g-metric-box.grn .mn { color: #137333; }
+    .g-metric-box .ml { font-size: .68rem; color: #70757a; margin-top: 3px; line-height: 1.3; }
+
+    /* ── FLIP CARDS ── */
+    .g-flip-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 10px; padding: 12px 14px;
+    }
+    .flip-card { perspective: 1200px; cursor: pointer; height: 320px; }
+    .flip-card-inner {
+      position: relative; width: 100%; height: 100%;
+      transform-style: preserve-3d;
+      transition: transform .6s cubic-bezier(.4,0,.2,1);
+    }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back {
+      position: absolute; inset: 0;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      border-radius: 8px; overflow: hidden;
+      border: 1px solid #dadce0;
+    }
+    .flip-card-front {
+      background: #fff;
+      display: flex; flex-direction: column;
+      padding: 12px 12px 8px;
+    }
+    .flip-card-back {
+      background: #202124;
+      transform: rotateY(180deg);
+      display: flex; flex-direction: column;
+      padding: 14px 14px 10px; color: #e8eaed;
+    }
+    .fc-title { font-size: .82rem; font-weight: 500; color: #202124; }
+    .fc-sub { font-size: .67rem; color: #70757a; margin-bottom: .7rem; }
+    .fc-hint { margin-top: auto; padding-top: .5rem; font-size: .65rem; color: #70757a; display: flex; align-items: center; gap: .3rem; border-top: 1px solid #f1f3f4; }
+    .fc-hint svg { width: 11px; height: 11px; flex-shrink: 0; }
+    .fc-canvas-wrap { flex: 1; min-height: 0; position: relative; }
+    .fc-canvas-wrap canvas { position: absolute; inset: 0; }
+    .fc-back-eyebrow { font-size: .6rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #8ab4f8; margin-bottom: .4rem; }
+    .fc-back-title { font-size: .95rem; font-weight: 500; color: #e8eaed; margin-bottom: .8rem; line-height: 1.3; }
+    .fc-back-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .4rem; margin-bottom: .8rem; }
+    .fc-stat { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 6px; padding: .5rem .5rem; text-align: center; }
+    .fc-stat-n { font-size: 1.1rem; font-weight: 700; color: #8ab4f8; line-height: 1; }
+    .fc-stat-l { font-size: .58rem; color: rgba(255,255,255,.45); margin-top: .15rem; line-height: 1.25; }
+    .fc-back-body { font-size: .72rem; color: rgba(255,255,255,.6); line-height: 1.55; flex: 1; overflow: hidden; }
+    .fc-back-hint { margin-top: auto; padding-top: .5rem; font-size: .62rem; color: rgba(255,255,255,.3); display: flex; align-items: center; gap: .3rem; border-top: 1px solid rgba(255,255,255,.07); }
+    .fc-back-hint svg { width: 10px; height: 10px; flex-shrink: 0; }
+
+    /* ── SKILLS ── */
+    .g-skills-wrap { padding: 12px 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .g-skill-grp h4 { font-size: .72rem; color: #70757a; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 6px; }
+    .g-skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .g-skill-tag { font-size: .75rem; color: #1a73e8; background: #e8f0fe; padding: 3px 10px; border-radius: 999px; }
+
+    /* ── PAGINATION ── */
+    .g-pagination {
+      text-align: center;
+      padding: 30px 0 40px;
+      border-top: 1px solid #ebebeb;
+      margin-top: 10px;
+    }
+    .g-pagination-logo {
+      font-size: 28px; font-weight: 700; letter-spacing: -1px;
+      display: inline-flex; align-items: center; gap: 0;
+      margin-bottom: 14px;
+    }
+    .g-page-links { display: flex; align-items: center; justify-content: center; gap: 4px; }
+    .g-page-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 36px; height: 36px;
+      font-size: 14px; color: #4285F4;
+      border-radius: 50%; cursor: pointer;
+      padding: 0 6px;
+    }
+    .g-page-link:hover { background: #f1f3f4; text-decoration: underline; }
+    .g-page-link.active { color: #202124; font-weight: 700; text-decoration: underline; }
+    .g-page-next {
+      display: inline-flex; align-items: center;
+      color: #4285F4; font-size: 14px; cursor: pointer;
+      gap: 4px; padding: 0 8px;
+    }
+    .g-page-next:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    .g-footer {
+      background: #f2f2f2;
+      border-top: 1px solid #e0e0e0;
+      padding: 14px 20px;
+      font-size: 13px; color: #70757a;
+      text-align: center;
+    }
+    .g-footer a { color: #70757a; margin: 0 10px; }
+    .g-footer a:hover { text-decoration: underline; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── RESUME PANEL ── */
+    #resume-panel {
+      display: none;
+      flex: 1;
+      min-width: 0;
+      padding: 12px 0 40px 20px;
+      height: calc(100vh - 130px);
+    }
+    #resume-panel iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(32,33,36,.15);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 760px) {
+      .g-sidebar { display: none; }
+      .g-results { padding-left: 0; max-width: 100%; }
+      .g-tabs { padding-left: 10px; overflow-x: auto; gap: 0; }
+      .g-tabs::-webkit-scrollbar { display: none; }
+      .g-header { gap: 10px; padding: 10px 12px 0; flex-wrap: wrap; }
+      .g-logo img { height: 36px; }
+      .g-searchbar-wrap { flex: 1; min-width: 0; }
+      .g-search-btn { display: none; }
+      .g-body { padding: 0 12px; }
+      .g-topnav { padding: 6px 12px; }
+      .g-topnav-left { display: none; }
+      .g-topnav a:not(.g-signin) { display: none; }
+      .g-result-title { font-size: 17px; }
+      .g-stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .g-flip-grid { grid-template-columns: 1fr; }
+      .g-metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .g-skills-wrap { grid-template-columns: 1fr; }
+      .flip-card { height: 290px; }
+      .flip-card-inner { height: 290px; }
+      .g-keywords { gap: 6px; }
+      .g-kw { font-size: 12px; padding: 4px 11px; }
+      .g-detail { overflow-x: hidden; }
+      .g-exp-top { flex-direction: column; gap: 2px; }
+    }
+    @media (max-width: 480px) {
+      .g-logo img { height: 28px; }
+      .g-searchbar input { font-size: 15px; }
+      .g-tab { padding: 8px 10px; font-size: 12px; }
+      .g-result-title { font-size: 16px; }
+      .g-stat-grid { grid-template-columns: repeat(2, 1fr); }
+      .g-metric-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="g-topnav" id="topnav">
+  <div class="g-topnav-left">
+    <a href="#">Resume</a>
+    <a href="#">References</a>
+    <a href="#">Portfolio</a>
+    <a href="#">more ▾</a>
+  </div>
+  <!-- filled by JS -->
+</div>
+
+<!-- SEARCH HEADER -->
+<header class="g-header">
+  <div class="g-logo">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google" />
+  </div>
+  <div class="g-searchbar-wrap">
+    <div class="g-searchbar">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" id="search-input" value="Top Product Leader" readonly />
+      <svg class="mic-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z"/></svg>
+    </div>
+    <button class="g-search-btn">Google Search</button>
+    <button class="g-search-btn">I'm Feeling Lucky</button>
+  </div>
+</header>
+
+<!-- RESULT TABS -->
+<nav class="g-tabs">
+  <span class="g-tab active" id="tab-portfolio" onclick="showTab('portfolio')">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>Portfolio
+  </span>
+  <span class="g-tab" id="tab-resume" onclick="showTab('resume')">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Resume
+  </span>
+  <a href="blog.html" class="g-tab">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Blog
+  </a>
+  <a href="https://www.linkedin.com/in/satya-sundararaman" target="_blank" class="g-tab" id="tab-linkedin">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+  </a>
+  <a href="dashboard.html" class="g-tab g-tab-sep">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Manage
+  </a>
+</nav>
+
+<!-- BODY -->
+<div class="g-body">
+
+  <!-- SIDEBAR -->
+  <aside class="g-sidebar" id="sidebar">
+    <!-- filled by JS -->
+  </aside>
+
+  <!-- RESULTS -->
+  <main class="g-results" id="results-col">
+    <!-- filled by JS -->
+  </main>
+
+  <!-- RESUME PANEL -->
+  <div id="resume-panel">
+    <iframe id="resume-iframe" title="Resume - Satya Sundararaman"></iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="g-footer" id="footer">
+  <!-- filled by JS -->
+</footer>
+
+<script>
+/* ── Default content (used as fallback if server is unavailable) ── */
+const DEFAULT_CONTENT = {"meta":{"pageTitle":"Top Product Leader - Google Search","searchQuery":"Top Product Leader","resultCount":"About 847,000,000 results (0.42 seconds)"},"personal":{"name":"Satya Sundararaman","title":"Director of Product Management · AI/ML & Consumer Growth","location":"St. Johns, Florida","email":"satyanarayan.s@gmail.com","phone":"678-986-9290","linkedinUrl":"https://www.linkedin.com/in/satya-sundararaman","linkedinLabel":"linkedin.com/in/satya-s"},"sidebar":{"experienceStats":[{"value":"20+","label":"Years"},{"value":"50+","label":"Products Shipped"},{"value":"$50M+","label":"Revenue Influenced"}],"focusAreas":["Real Estate / PropTech","Rental Marketplaces","AI / ML Products","FinTech","Enterprise Software"],"education":[{"degree":"MBA","institution":"ESMT Berlin","muted":false},{"degree":"M.Sc. Economics","institution":"","muted":false},{"degree":"B.E. Chem. Eng.","institution":"","muted":false},{"degree":"","institution":"BITS Pilani, India","muted":true}],"skills":["Product Strategy","AI/ML Integration","A/B Experimentation","Cross-Func. Leadership","GTM Strategy","OKRs & Metrics"]},"cta":{"headline":"Open to Director of Product roles","subtext":"Consumer, AI/ML, Marketplace, or Growth. Based in St. Johns, FL · Open to remote & hybrid."},"keywords":[{"icon":"🏆","text":"Director of Product Management"},{"icon":"🤖","text":"AI / ML Products"},{"icon":"📈","text":"+24% Lead Conversion"},{"icon":"🚀","text":"+96% DAU Growth"},{"icon":"💰","text":"$50M+ Revenue Influenced"},{"icon":"📅","text":"20+ Years Experience"},{"icon":"📦","text":"50+ Products Shipped"},{"icon":"🔬","text":"A/B Experimentation"},{"icon":"🏠","text":"PropTech · FinTech"},{"icon":"🎓","text":"MBA · ESMT Berlin"},{"icon":"📉","text":"−35% Bounce Rate"},{"icon":"👥","text":"Cross-Functional Leader"}],"faq":[{"question":"What makes Satya Sundararaman a top product leader?","answer":"With <strong>20+ years</strong> across real estate, rental marketplaces, fintech, and enterprise software, Satya has launched <strong>50+ products and features</strong> and led AI/ML initiatives that increased lead conversion 24%, reversed a −52% YoY traffic decline into +96% DAU growth, and influenced $50M+ in revenue across platforms."},{"question":"What AI/ML products has Satya built?","answer":"At Redfin, Satya launched an AI model for optimal property imagery selection (<strong>+24% lead conversion</strong>) and an AI pipeline generating property summaries (<strong>+17% engagement</strong>). At Rent.com, he delivered ML-driven Lead CTA optimizations yielding +7% core lead conversion and +12% implied lease conversion."},{"question":"Where has Satya Sundararaman worked?","answer":"Satya has built his 20-year career across some of the most recognized names in real estate and technology. He currently leads Consumer Product at <strong>Redfin</strong> (2022–Present), driving experience across web and mobile. Prior to that, he spent four years at <strong>Rent.com and ApartmentGuide</strong> (2018–2022), both Redfin brands, leading platform growth and monetization. Before that, he spent five years at <strong>Altisource</strong>, driving product strategy across Hubzu.com and Owners.com (2013–2018). Earlier in his career he founded <strong>NestQuest</strong> and held roles at Nous Infosystems and Infosys Technologies, earning the Customer Satisfaction Award in 2005 and 2006."},{"question":"What is Satya's educational background?","answer":"Satya holds a strong academic foundation spanning business, economics, and engineering. He earned his <strong>MBA from the European School of Management &amp; Technology (ESMT)</strong> in Berlin in 2008, one of Europe's leading business schools. Before that, he completed a rigorous dual-degree program at the <strong>Birla Institute of Technology &amp; Science (BITS), Pilani</strong> - one of India's most prestigious universities - graduating with both an <strong>M.Sc. (Honors) in Economics</strong> and a <strong>B.E. (Honors) in Chemical Engineering</strong> between 1999 and 2004."}],"experiences":[{"domain":"redfin.com","urlText":"redfin.com","urlCrumb":"› team › product › satya-sundararaman","resultTitle":"Satya Sundararaman - Director of Product, Consumer Experience · Redfin","dateRange":"2022 – Present","resultSnippet":"Leading product vision and strategy across core consumer platforms, managing a team of PMs and driving cross-functional execution. Delivered Zillow Integration (P0–P2 on time), launched <strong>AI imagery model (+24% lead conv.)</strong>, reduced bounce <strong>35%</strong> via search redesign.","detailHead":"Experience · Redfin.com · 2022 – Present","roles":[{"role":"Director of Product, Consumer Experience","company":"Redfin.com","dateRange":"2022 – Present","bullets":["<strong>People Leadership:</strong> Manage and mentor a team of PMs; defined career frameworks, led hiring, and ran performance cycles across the consumer product org.","<strong>Org Influence:</strong> Set product vision and quarterly OKRs for consumer web and mobile; aligned roadmap across Engineering, Design, Data Science, and Marketing stakeholders.","<strong>Zillow Integration Launch:</strong> Led end-to-end P0/P1/P2 delivery on time across multiple stakeholder teams.","<strong>AI/ML Innovation:</strong> +24% lead conversion via AI imagery model; +17% engagement via AI property summaries.","<strong>Conversion Optimization:</strong> Multi-variant A/B tests across Contact Buttons, Right Rail Lead Form, and Bookmarks.","<strong>Search Redesign:</strong> Reduced bounce rates 35% via deep user research and A/B experimentation - transferable to any high-traffic consumer platform.","<strong>PM Development:</strong> Built reusable experimentation and analytics frameworks adopted across the broader product org."]}]},{"domain":"rent.com","urlText":"rent.com","urlCrumb":"› about › product-team","resultTitle":"Satya Sundararaman - Director of Product, Growth & Monetization · Rent.com / ApartmentGuide","dateRange":"2018 – 2022","resultSnippet":"Reversed a <strong>−52% YoY traffic decline</strong> to +96% DAU growth through marketplace growth loops, re-engagement mechanics, and conversion optimisation - skills directly transferable to any two-sided or subscription platform. Launched Saved Search (+190% desktop CTA), push notifications (<strong>63.5% opt-in</strong>), and Google Sign In (81% of new accounts).","detailHead":"Experience · Rent.com (a Redfin brand) · 2018 – 2022","roles":[{"role":"Director of Product, Growth & Monetization","company":"Rent.com / ApartmentGuide","dateRange":"2018 – 2022","bullets":["<strong>Saved Search:</strong> 7–9% app adoption, +133% mobile web CTA, +190% desktop CTA across iOS, Android &amp; web.","<strong>Push Notifications:</strong> 63.5% opt-in rate and 13% open rate (vs. ~5% industry avg.) at ApartmentGuide.","<strong>Google Sign In:</strong> Captured 81% of all new account creations within weeks of launch.","<strong>Growth &amp; Recovery:</strong> Reversed −52% YoY decline → +96% DAU growth via platform relaunch.","<strong>ML Conversion:</strong> +7% core lead conversion, +12% implied lease conversion via ML + Lead CTA optimizations.","<strong>Revenue:</strong> Launched recurring revenue via rent collection &amp; screening; grew lead conversion 32% YoY."]}]},{"domain":"altisource.com","urlText":"altisource.com","urlCrumb":"› product-leadership","resultTitle":"Satya Sundararaman - Product Manager · Altisource & Earlier Roles","dateRange":"2004 – 2018","resultSnippet":"Generated <strong>$3.2M+ direct annual impact</strong> at Altisource. Founded NestQuest real-estate marketplace. Led CRM consulting at Infosys - Customer Satisfaction Award 2005 &amp; 2006.","detailHead":"Experience · 2004 – 2018","roles":[{"role":"Product Manager","company":"Altisource - Hubzu.com & Owners.com","dateRange":"2013 – 2018","bullets":["<strong>$1.5M</strong> new annual revenue via lead farming system.","<strong>$1M YoY</strong> revenue increase through client management product.","<strong>$700K/year</strong> in license cost savings - custom CRM for sales operations.","OKR-driven roadmapping, user research, competitive analysis, and roadmap prioritization."]},{"role":"Earlier Career","company":"Nous Infosystems · NestQuest (Founder) · Infosys Technologies","dateRange":"2004 – 2013","bullets":["Founded <strong>NestQuest</strong> (real-estate marketplace, 2007); led CRM consulting at <strong>Infosys</strong> (Customer Satisfaction Award '05 &amp; '06); drove product growth at <strong>Nous Infosystems</strong> across POS and healthcare software."]}]}],"featuredStats":[{"value":"20","label":"Years Experience","isCounter":true},{"value":"50+","label":"Products & Features Shipped","isCounter":false},{"value":"$50M+","label":"Revenue Influenced","isCounter":false},{"value":"24","label":"% Lead Conv. Lift (AI)","isCounter":true},{"value":"96","label":"% DAU Growth","isCounter":true},{"value":"35","label":"% Bounce Rate Drop","isCounter":true}],"projectHighlights":{"urlText":"satya-sundararaman.com","urlCrumb":"› impact › project-highlights","resultTitle":"Project Highlights & Measurable Impact - Satya Sundararaman","resultSnippet":"Quantified results across AI/ML, growth, conversion, and revenue initiatives. Click any card to see full project details.","metrics":[{"value":"24","label":"Lead Conv. Lift (AI)","isCounter":true,"isGreen":false,"suffix":"%"},{"value":"96","label":"DAU Growth","isCounter":true,"isGreen":true,"suffix":"%"},{"value":"35","label":"Bounce Rate Drop","isCounter":true,"isGreen":false,"suffix":"%"},{"value":"63","label":"Push Notif. Opt-in","isCounter":true,"isGreen":false,"suffix":"%"},{"value":"81","label":"New Accounts (GSI)","isCounter":true,"isGreen":true,"suffix":"%"},{"value":"190","label":"Desktop CTA Lift","isCounter":true,"isGreen":false,"suffix":"%"}],"flipCards":[{"id":"aiChart","frontTitle":"AI / ML Feature Impact","frontSub":"Redfin · 2022–Present","backEyebrow":"Redfin · 2022–Present","backTitle":"AI-Powered Consumer Experience","backStats":[{"value":"+24%","label":"Lead conv. from AI imagery"},{"value":"+17%","label":"Engagement (AI summaries)"},{"value":"−35%","label":"Bounce rate reduction"},{"value":"P0–P2","label":"Zillow integration on-time"}],"backBody":"AI model for conversion-optimized lead images + AI property summary pipeline. Multi-variant A/B tests at scale. PDP design sprint improving amenities and floor plans.","chart":{"type":"bar-h","labels":["AI Imagery","AI Summaries","Search UX"],"data":[24,17,35],"tooltipFmt":"+{v}%"}},{"id":"savedSearchChart","frontTitle":"Saved Search - CTA Lift","frontSub":"Rent.com · 2018–2022","backEyebrow":"Rent.com · 2018–2022","backTitle":"Saved Search - Cross-Platform","backStats":[{"value":"+133%","label":"Mobile web CTA lift"},{"value":"+190%","label":"Desktop CTA lift"},{"value":"7–9%","label":"App adoption"},{"value":"3×","label":"Platforms shipped"}],"backBody":"Delivered Saved Search end-to-end across iOS, Android, and web - driving significant lift in repeat engagement and CTA click-through rates.","chart":{"type":"grouped-bar","labels":["Mobile Web","Desktop"],"beforeData":[100,100],"afterData":[233,290],"afterLabels":["+133%","+190%"]}},{"id":"dauChart","frontTitle":"Daily Active User Trajectory","frontSub":"Rent.com - Platform Recovery","backEyebrow":"Rent.com · 2018–2020","backTitle":"Platform Relaunch & Traffic Recovery","backStats":[{"value":"−52%","label":"YoY traffic before relaunch"},{"value":"+96%","label":"DAU growth post-relaunch"},{"value":"+32%","label":"Lead conversion YoY"},{"value":"2×+","label":"vs. original projections"}],"backBody":"Championed a full platform relaunch coordinating SEO, product, engineering, and marketing. Results far exceeded original projections.","chart":{"type":"line","labels":["Q1'18","Q2'18","Q3'18","Launch","Q1'19","Q2'19","Q3'19","Q4'19"],"data":[100,72,55,52,68,85,105,148],"launchIndex":3}},{"id":"revenueChart","frontTitle":"Revenue & Cost Impact","frontSub":"Altisource · 2013–2018","backEyebrow":"Altisource · 2013–2018","backTitle":"Product-Led Revenue Growth","backStats":[{"value":"$1.5M","label":"Lead farming system"},{"value":"$1M","label":"Client mgmt product"},{"value":"$700K","label":"License cost savings"},{"value":"$3.2M","label":"Direct annual impact"}],"backBody":"Three high-impact products: lead farming (new revenue), client management (YoY lift), custom CRM replacing expensive third-party license - grounded in OKR-driven roadmapping.","chart":{"type":"bar-v","labels":["Lead Farming","Client Mgmt","CRM Savings"],"data":[1.5,1.0,0.7],"tooltipFmt":"${v}M"}},{"id":"pushChart","frontTitle":"Push Notification Performance","frontSub":"ApartmentGuide vs. Industry Avg.","backEyebrow":"ApartmentGuide · 2019","backTitle":"Push Notification Launch","backStats":[{"value":"63.5%","label":"Opt-in rate"},{"value":"13%","label":"Open rate (vs. 5% avg)"},{"value":"2.6×","label":"Open rate vs. industry"},{"value":"1.4×","label":"Opt-in vs. industry"}],"backBody":"Thoughtful permission UX and well-timed prompts drove a 63.5% opt-in rate. The 13% open rate - nearly 3× industry average - validated highly relevant, personalized notification content.","chart":{"type":"grouped-bar-pct","labels":["Opt-in Rate","Open Rate"],"industryData":[45,5],"achievedData":[63.5,13]}},{"id":"mlChart","frontTitle":"ML-Driven Conversion Gains","frontSub":"Rent.com · ML + Lead CTA","backEyebrow":"Rent.com · 2019–2021","backTitle":"ML + Lead CTA Optimization","backStats":[{"value":"+7%","label":"Core lead conversion"},{"value":"+12%","label":"Implied lease conversion"},{"value":"+32%","label":"YoY lead conversion"},{"value":"81%","label":"New accounts via Google SSO"}],"backBody":"ML-powered CTA optimizations personalizing placement and messaging. Combined with Google Sign In capturing 81% of new accounts - compounding lift in top-of-funnel and bottom-of-funnel conversion.","chart":{"type":"bar-v","labels":["Lead Conv.","Lease Conv.","YoY Leads"],"data":[7,12,32],"tooltipFmt":"+{v}%"}}]},"skills":[{"category":"Strategy & Vision","tags":["Product Strategy","Director-Level Execution","GTM Strategy","P&L Ownership","Scalable Roadmapping"]},{"category":"AI & Data","tags":["AI/ML Product Integration","A/B Experimentation","Data-Driven Decisions","Growth Analytics"]},{"category":"Leadership","tags":["Cross-Functional Leadership","PM Mentorship","Stakeholder Management","Team Development"]},{"category":"Product Craft","tags":["Mobile & Web Products","Prioritization Frameworks","User Research","OKRs & Metrics"]}],"education":[{"degree":"Master of Business Administration (MBA)","institution":"European School of Management & Technology","date":"Berlin · 2008"},{"degree":"M.Sc. (Honors) Economics","institution":"Birla Institute of Technology & Science (BITS), Pilani","date":"India · 1999–2004"},{"degree":"B.E. (Honors) Chemical Engineering","institution":"Birla Institute of Technology & Science (BITS), Pilani","date":"India · 1999–2004"}],"footer":{"name":"Satya Sundararaman","title":"Director of Product Management","email":"satyanarayan.s@gmail.com"}};
+
+/* ── Render helpers ── */
+const CHEVRON_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>`;
+const FLIP_HINT_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 15l6 6m-11-4a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>`;
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderTopNav(c) {
+  const p = c.personal;
+  document.getElementById('topnav').insertAdjacentHTML('beforeend', `
+    <a href="mailto:${esc(p.email)}">${esc(p.email)}</a>
+    <a href="${esc(p.linkedinUrl)}" target="_blank" style="display:inline-flex;align-items:center;gap:4px;color:#0077b5;font-weight:500">
+      <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/> LinkedIn
+    </a>
+    <a class="g-signin" href="tel:${esc(p.phone.replace(/-/g,''))}">${esc(p.phone)}</a>
+  `);
+}
+
+function renderSidebar(c) {
+  const p = c.personal, s = c.sidebar;
+  const eduHtml = s.education.map(e => {
+    if (e.muted) return `<div class="g-sidebar-item" style="color:#70757a">${esc(e.institution)}</div>`;
+    let txt = e.degree ? `<strong>${esc(e.degree)}</strong>` : '';
+    if (e.institution) txt += (txt ? ' – ' : '') + esc(e.institution);
+    return `<div class="g-sidebar-item">${txt}</div>`;
+  }).join('');
+
+  document.getElementById('sidebar').innerHTML = `
+    <div class="g-sidebar-photo"><img src="profile.jpeg" alt="${esc(p.name)}" /></div>
+    <div class="g-sidebar-name">${esc(p.name)}</div>
+    <div class="g-sidebar-title">${esc(p.title)}</div>
+    <div class="g-sidebar-contact">
+      <a href="tel:${esc(p.phone.replace(/-/g,''))}">${esc(p.phone)}</a><br/>
+      <a href="mailto:${esc(p.email)}">${esc(p.email)}</a><br/>
+      <a href="${esc(p.linkedinUrl)}" target="_blank" style="color:#0077b5;font-weight:500">${esc(p.linkedinLabel)}</a><br/>
+      ${esc(p.location)}
+    </div>
+    <div class="g-sidebar-section">Experience</div>
+    ${s.experienceStats.map(e => `<div class="g-sidebar-item"><strong>${esc(e.value)}</strong> ${esc(e.label)}</div>`).join('')}
+    <div class="g-sidebar-section">Focus Areas</div>
+    ${s.focusAreas.map(f => `<div class="g-sidebar-item">${esc(f)}</div>`).join('')}
+    <div class="g-sidebar-section">Education</div>
+    ${eduHtml}
+    <div class="g-sidebar-section">Skills</div>
+    ${s.skills.map(sk => `<div class="g-sidebar-item">${esc(sk)}</div>`).join('')}
+  `;
+}
+
+function renderFAQ(faq) {
+  return `<div class="g-paa fade-up">
+    <div class="g-paa-head">People also ask</div>
+    ${faq.map(item => `
+      <div class="g-paa-item open">
+        <div class="g-paa-q" onclick="this.parentElement.classList.toggle('open')">
+          ${esc(item.question)} ${CHEVRON_SVG}
+        </div>
+        <div class="g-paa-ans">${item.answer}</div>
+      </div>
+    `).join('')}
+  </div>`;
+}
+
+function renderExperience(exp) {
+  const rolesHtml = exp.roles.map(r => `
+    <div class="g-exp-row">
+      <div class="g-exp-top">
+        <div><div class="g-exp-role">${esc(r.role)}</div><div class="g-exp-co">${esc(r.company)}</div></div>
+        <span class="g-exp-date">${esc(r.dateRange)}</span>
+      </div>
+      <ul class="g-bullets">${r.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+  return `<div class="g-result fade-up">
+    <div class="g-result-url-row">
+      <img class="g-favicon" src="https://www.google.com/s2/favicons?domain=${esc(exp.domain)}&sz=32" alt="${esc(exp.urlText)}" />
+      <span class="g-url-text">${esc(exp.urlText)}</span>
+      <span class="g-url-crumb"> ${esc(exp.urlCrumb)}</span>
+    </div>
+    <div class="g-result-title">${esc(exp.resultTitle)}</div>
+    <div class="g-result-snippet"><span class="g-result-date">${esc(exp.dateRange)} · </span>${exp.resultSnippet}</div>
+    <div class="g-detail">
+      <div class="g-detail-head">${esc(exp.detailHead)}</div>
+      ${rolesHtml}
+    </div>
+  </div>`;
+}
+
+function renderFeaturedStats(stats) {
+  const boxes = stats.map(s => {
+    const nClass = s.isCounter ? 'n counter' : 'n';
+    const attr = s.isCounter ? ` data-target="${esc(s.value)}"` : '';
+    const val = s.isCounter ? '0' : esc(s.value);
+    return `<div class="g-stat-box"><div class="${nClass}"${attr}>${val}</div><div class="l">${esc(s.label)}</div></div>`;
+  }).join('');
+  return `<div class="g-featured fade-up">
+    <div class="g-featured-label">Featured Snippet · Career Impact at a Glance</div>
+    <div class="g-stat-grid">${boxes}</div>
+    <div class="g-featured-src">satya-sundararaman.com › resume › highlights</div>
+  </div>`;
+}
+
+function renderProjectHighlights(ph) {
+  const metricsHtml = ph.metrics.map(m => {
+    const cls = m.isGreen ? 'g-metric-box grn' : 'g-metric-box';
+    const nClass = m.isCounter ? 'mn counter' : 'mn';
+    const attr = m.isCounter ? ` data-target="${esc(m.value)}"` : '';
+    const color = m.isGreen ? '#137333' : '#1a73e8';
+    const val = m.isCounter ? '0' : esc(m.value);
+    return `<div class="${cls}">
+      <div class="${nClass}"${attr}>${val}</div><span style="font-size:.85rem;font-weight:700;color:${color}">${esc(m.suffix||'')}</span>
+      <div class="ml">${esc(m.label)}</div>
+    </div>`;
+  }).join('');
+
+  const cardsHtml = ph.flipCards.map(card => `
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <div class="fc-title">${esc(card.frontTitle)}</div>
+          <div class="fc-sub">${esc(card.frontSub)}</div>
+          <div class="fc-canvas-wrap"><canvas id="${esc(card.id)}"></canvas></div>
+          <div class="fc-hint">${FLIP_HINT_SVG} Click for details</div>
+        </div>
+        <div class="flip-card-back">
+          <div class="fc-back-eyebrow">${esc(card.backEyebrow)}</div>
+          <div class="fc-back-title">${esc(card.backTitle)}</div>
+          <div class="fc-back-stats">
+            ${card.backStats.map(s => `<div class="fc-stat"><div class="fc-stat-n">${esc(s.value)}</div><div class="fc-stat-l">${esc(s.label)}</div></div>`).join('')}
+          </div>
+          <div class="fc-back-body">${esc(card.backBody)}</div>
+          <div class="fc-back-hint">${FLIP_HINT_SVG} Click to flip back</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  return `<div class="g-result fade-up" id="results">
+    <div class="g-result-url-row">
+      <img class="g-favicon" src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=32" alt="LinkedIn" />
+      <span class="g-url-text">${esc(ph.urlText)}</span>
+      <span class="g-url-crumb"> ${esc(ph.urlCrumb)}</span>
+    </div>
+    <div class="g-result-title">${esc(ph.resultTitle)}</div>
+    <div class="g-result-snippet">${esc(ph.resultSnippet)}</div>
+    <div class="g-detail">
+      <div class="g-detail-head">Key Metrics</div>
+      <div class="g-metric-grid">${metricsHtml}</div>
+      <div class="g-flip-grid">${cardsHtml}</div>
+    </div>
+  </div>`;
+}
+
+function renderSkills(skills) {
+  const groups = skills.map(g => `
+    <div class="g-skill-grp">
+      <h4>${esc(g.category)}</h4>
+      <div class="g-skill-tags">${g.tags.map(t => `<span class="g-skill-tag">${esc(t)}</span>`).join('')}</div>
+    </div>
+  `).join('');
+  return `<div class="g-result fade-up" id="skills">
+    <div class="g-result-url-row">
+      <img class="g-favicon" src="https://www.google.com/s2/favicons?domain=indeed.com&sz=32" alt="Skills" />
+      <span class="g-url-text">satya-sundararaman.com</span>
+      <span class="g-url-crumb"> › profile › skills</span>
+    </div>
+    <div class="g-result-title">Core Competencies &amp; Key Skills - Satya Sundararaman</div>
+    <div class="g-result-snippet">Strategy &amp; vision, AI/ML product integration, cross-functional leadership, and product craft across mobile &amp; web platforms with 20+ years of execution.</div>
+    <div class="g-detail"><div class="g-skills-wrap">${groups}</div></div>
+  </div>`;
+}
+
+function renderEducation(edu) {
+  const rows = edu.map(e => `
+    <div class="g-exp-row">
+      <div class="g-exp-top">
+        <div><div class="g-exp-role">${esc(e.degree)}</div><div class="g-exp-co">${esc(e.institution)}</div></div>
+        <span class="g-exp-date">${esc(e.date)}</span>
+      </div>
+    </div>
+  `).join('');
+  return `<div class="g-result fade-up" id="education">
+    <div class="g-result-url-row">
+      <img class="g-favicon" src="https://www.google.com/s2/favicons?domain=bits-pilani.ac.in&sz=32" alt="Education" />
+      <span class="g-url-text">satya-sundararaman.com</span>
+      <span class="g-url-crumb"> › profile › education</span>
+    </div>
+    <div class="g-result-title">Education - Satya Sundararaman</div>
+    <div class="g-result-snippet">MBA · European School of Management &amp; Technology, Berlin (2008) &nbsp;·&nbsp; M.Sc. Economics &amp; B.E. Chemical Engineering · BITS Pilani, India (1999–2004)</div>
+    <div class="g-detail">${rows}</div>
+  </div>`;
+}
+
+function renderResults(c) {
+  const p = c.personal, ph = c.projectHighlights;
+  const kw = c.keywords.map(k => `<span class="g-kw"><span class="g-kw-icon">${k.icon}</span> ${esc(k.text)}</span>`).join('');
+
+  document.getElementById('results-col').innerHTML = `
+    <p class="g-did-you-mean">Showing results for <a href="#">${esc(p.name)}</a></p>
+
+    <div class="g-cta">
+      <div class="g-cta-text">
+        <strong>${esc(c.cta.headline)}</strong> — ${esc(c.cta.subtext)}
+      </div>
+      <div class="g-cta-actions">
+        <a class="g-cta-btn primary" href="mailto:${esc(p.email)}">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Get in touch
+        </a>
+        <a class="g-cta-btn secondary" href="${esc(p.linkedinUrl)}" target="_blank">
+          <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:12px;height:12px;border-radius:1px" alt=""/> View LinkedIn
+        </a>
+        <a class="g-cta-btn secondary" href="#" onclick="showTab('resume');return false;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          View Resume
+        </a>
+        <a class="g-cta-btn secondary" href="blog.html">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          View Blog
+        </a>
+      </div>
+    </div>
+
+    <div class="g-keywords">${kw}</div>
+    <p class="g-result-count">${c.meta.resultCount}</p>
+
+    ${renderFAQ(c.faq)}
+    ${c.experiences.map(renderExperience).join('')}
+    ${renderFeaturedStats(c.featuredStats)}
+    ${renderProjectHighlights(ph)}
+    ${renderSkills(c.skills)}
+    ${renderEducation(c.education)}
+
+    <div class="g-pagination">
+      <div class="g-pagination-logo">
+        <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">o</span><span style="color:#34A853">o</span><span style="color:#EA4335">o</span><span style="color:#4285F4">o</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">o</span><span style="color:#34A853">g</span><span style="color:#EA4335">l</span><span style="color:#4285F4">e</span>
+      </div>
+      <div class="g-page-links">
+        <span class="g-page-link active">1</span>
+        <span class="g-page-link">2</span><span class="g-page-link">3</span><span class="g-page-link">4</span>
+        <span class="g-page-link">5</span><span class="g-page-link">6</span><span class="g-page-link">7</span>
+        <span class="g-page-link">8</span><span class="g-page-link">9</span><span class="g-page-link">10</span>
+        <span class="g-page-next">Next ›</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderFooter(c) {
+  const f = c.footer;
+  document.getElementById('footer').innerHTML = `
+    <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Settings</a>
+    &nbsp;·&nbsp; ${esc(f.name)} &nbsp;·&nbsp; ${esc(f.title)} &nbsp;·&nbsp;
+    <a href="mailto:${esc(f.email)}">${esc(f.email)}</a>
+  `;
+}
+
+/* ── Charts ── */
+function initCharts(flipCards) {
+  Chart.defaults.font.family = "arial, sans-serif";
+  Chart.defaults.font.size = 10;
+  Chart.defaults.color = '#5f6368';
+  Chart.defaults.plugins.legend.display = false;
+
+  const BLUE = '#1a73e8', BLUE2 = '#4285F4', GREEN = '#34a853', RED = '#ea4335', MUTED = '#dadce0';
+
+  flipCards.forEach(card => {
+    const el = document.getElementById(card.id);
+    if (!el) return;
+    const ch = card.chart;
+
+    if (ch.type === 'bar-h') {
+      new Chart(el, { type: 'bar', data: { labels: ch.labels, datasets: [{ data: ch.data, backgroundColor: [BLUE, BLUE2, GREEN], borderRadius: 5, borderSkipped: false }] }, options: { indexAxis: 'y', plugins: { tooltip: { callbacks: { label: ctx => ' ' + ch.tooltipFmt.replace('{v}', ctx.parsed.x) } } }, scales: { x: { grid: { color: '#f8f9fa' }, ticks: { callback: v => v + '%' } }, y: { grid: { display: false } } } } });
+    } else if (ch.type === 'bar-v') {
+      new Chart(el, { type: 'bar', data: { labels: ch.labels, datasets: [{ data: ch.data, backgroundColor: [BLUE, BLUE2, GREEN], borderRadius: 5, borderSkipped: false }] }, options: { plugins: { tooltip: { callbacks: { label: ctx => ' ' + ch.tooltipFmt.replace('{v}', ctx.parsed.y) } } }, scales: { y: { grid: { color: '#f8f9fa' } }, x: { grid: { display: false } } } } });
+    } else if (ch.type === 'grouped-bar') {
+      Chart.defaults.plugins.legend.display = true;
+      new Chart(el, { type: 'bar', data: { labels: ch.labels, datasets: [{ label: 'Before', data: ch.beforeData, backgroundColor: MUTED, borderRadius: 4 }, { label: 'After', data: ch.afterData, backgroundColor: [BLUE, GREEN], borderRadius: 4 }] }, options: { plugins: { legend: { display: true, labels: { boxWidth: 8, padding: 8, color: '#5f6368' } }, tooltip: { callbacks: { label: ctx => ctx.dataset.label === 'After' ? ` ${ctx.parsed.y} (${ch.afterLabels[ctx.dataIndex]})` : ` ${ctx.parsed.y} (baseline)` } } }, scales: { y: { grid: { color: '#f8f9fa' }, ticks: { callback: v => v === 100 ? 'Base' : v } }, x: { grid: { display: false } } } } });
+      Chart.defaults.plugins.legend.display = false;
+    } else if (ch.type === 'grouped-bar-pct') {
+      Chart.defaults.plugins.legend.display = true;
+      new Chart(el, { type: 'bar', data: { labels: ch.labels, datasets: [{ label: 'Industry Avg', data: ch.industryData, backgroundColor: MUTED, borderRadius: 4 }, { label: 'Achieved', data: ch.achievedData, backgroundColor: [BLUE, GREEN], borderRadius: 4 }] }, options: { plugins: { legend: { display: true, labels: { boxWidth: 8, padding: 8, color: '#5f6368' } }, tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}%` } } }, scales: { y: { grid: { color: '#f8f9fa' }, ticks: { callback: v => v + '%' }, suggestedMax: 75 }, x: { grid: { display: false } } } } });
+      Chart.defaults.plugins.legend.display = false;
+    } else if (ch.type === 'line') {
+      new Chart(el, { type: 'line', data: { labels: ch.labels, datasets: [{ data: ch.data, borderColor: BLUE, backgroundColor: 'rgba(26,115,232,.07)', fill: true, tension: 0.4, pointBackgroundColor: ctx => ctx.dataIndex === ch.launchIndex ? RED : BLUE, pointRadius: ctx => ctx.dataIndex === ch.launchIndex ? 6 : 3, pointBorderWidth: 0 }] }, options: { plugins: { tooltip: { callbacks: { label: ctx => ` DAU Index: ${ctx.parsed.y}` } } }, scales: { y: { grid: { color: '#f8f9fa' }, suggestedMin: 40, suggestedMax: 160 }, x: { grid: { display: false }, ticks: { maxRotation: 30 } } } } });
+    }
+  });
+}
+
+/* ── Animations ── */
+function initAnimations() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  const cObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(el => cObs.observe(el));
+}
+
+function animateCounter(el) {
+  const target = +el.dataset.target, dur = 1500, step = target / (dur / 16);
+  let cur = 0;
+  const t = setInterval(() => {
+    cur = Math.min(cur + step, target);
+    el.textContent = Math.floor(cur);
+    if (cur >= target) clearInterval(t);
+  }, 16);
+}
+
+/* ── Tab switching ── */
+function showTab(tab) {
+  const resultsCol = document.getElementById('results-col');
+  const resumePanel = document.getElementById('resume-panel');
+  const tabPortfolio = document.getElementById('tab-portfolio');
+  const tabResume = document.getElementById('tab-resume');
+
+  if (tab === 'resume') {
+    resultsCol.style.display = 'none';
+    resumePanel.style.display = 'block';
+    tabPortfolio.classList.remove('active');
+    tabResume.classList.add('active');
+    const iframe = document.getElementById('resume-iframe');
+    if (!iframe.getAttribute('src')) iframe.src = 'resume.pdf';
+    window.scrollTo(0, 0);
+  } else {
+    resultsCol.style.display = '';
+    resumePanel.style.display = 'none';
+    tabResume.classList.remove('active');
+    tabPortfolio.classList.add('active');
+  }
+}
+
+/* ── Bootstrap ── */
+async function init() {
+  let content = DEFAULT_CONTENT;
+  try {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 2500);
+    const res = await fetch('/api/portfolio', { signal: controller.signal });
+    if (res.ok) content = await res.json();
+  } catch {}
+
+  document.getElementById('page-title').textContent = content.meta.pageTitle;
+  document.getElementById('search-input').value = content.meta.searchQuery;
+  const liTab = document.getElementById('tab-linkedin');
+  if (liTab) liTab.href = content.personal.linkedinUrl;
+
+  renderTopNav(content);
+  renderSidebar(content);
+  renderResults(content);
+  renderFooter(content);
+  initCharts(content.projectHighlights.flipCards);
+  initAnimations();
+  if (window.location.hash === '#resume') showTab('resume');
+}
+
+init();
+</script>
+</body>
+</html>

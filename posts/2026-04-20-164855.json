@@ -1,0 +1,53 @@
+{
+  "title": "Why Your AI Roadmap Just Got Obsolete (And What to Build Instead)",
+  "tldr": [
+    "AI agents now handle entire workflows, not just tasks",
+    "Code generation tools are replacing junior engineers faster than expected",
+    "Multimodal AI is making voice and visual interfaces table stakes"
+  ],
+  "intro": "Three months ago, most PMs were still debating whether to add a chatbot to their product. Today, that conversation feels ancient. The AI capabilities shipping in Q2 2026 aren't incremental improvements. They're forcing us to rethink what products even are. If your roadmap still treats AI as a feature instead of the foundation, you're already behind. The companies winning right now aren't just using better models. They're building entirely different product categories that couldn't exist without AI agents, code generation, and multimodal interfaces.",
+  "sections": [
+    {
+      "trend": "🤖 AI Agents Actually Work Now",
+      "what": "Anthropic's Claude 3.5 and OpenAI's GPT-5 can now complete multi-step workflows that previously required human oversight. We're not talking about chatbots that answer questions. These agents book meetings, write code, analyze data, and execute complex business processes with 95%+ accuracy. The breakthrough isn't just better reasoning. It's reliable tool use and the ability to recover from errors without starting over.",
+      "pmImpact": "Your users don't want to learn your interface anymore. They want to tell your product what they need and watch it happen automatically. This means rethinking your entire UX from forms and buttons to natural language commands and autonomous execution. The products that win will feel less like software and more like having a really smart employee. Your job shifts from designing workflows to designing guardrails and exception handling.",
+      "example": "Notion's AI workspace launched last month lets users say 'create a project plan for our Q3 launch' and watches as it builds pages, assigns tasks, sets deadlines, and invites team members. No templates, no manual setup.",
+      "action": "Map your product's three most common user workflows and identify which steps an AI agent could complete autonomously."
+    },
+    {
+      "trend": "💻 Code Generation Eats Engineering Resources",
+      "what": "GitHub Copilot now generates 60% of code at major tech companies, and new tools like Cursor and Replit Agent can build entire features from natural language descriptions. Junior and mid-level engineering tasks are disappearing faster than anyone predicted. The constraint isn't generating code anymore. It's knowing what to build and ensuring it integrates properly with existing systems.",
+      "pmImpact": "Your engineering capacity just doubled, but so did everyone else's. Speed of execution won't be a competitive advantage much longer. Product judgment becomes everything. Engineers will spend more time on architecture, integration, and complex problem-solving. You'll need to get much better at writing detailed technical requirements and understanding system constraints. The PM who can translate business needs into precise technical specifications wins.",
+      "example": "Linear shipped their new analytics dashboard in two weeks using Claude to generate most of the React components and API endpoints. Their engineers focused on data architecture and performance optimization.",
+      "action": "Start writing more detailed technical specs that AI can execute against, including edge cases and integration requirements."
+    },
+    {
+      "trend": "👁️ Multimodal AI Makes Everything Interactive",
+      "what": "GPT-5's vision capabilities and Google's Gemini Ultra can now understand images, videos, documents, and audio with human-level accuracy. Users expect to interact with products through voice, camera, screenshots, and natural gestures. The old distinction between input methods is disappearing. Every interface becomes a conversation.",
+      "pmImpact": "Your users will expect to show your product what they want instead of describing it. Screenshots become bug reports. Voice becomes the primary input method. Visual search replaces typed queries. This isn't about adding a voice feature to your existing product. It's about rebuilding your product to work across every modality seamlessly. Mobile-first thinking was just practice for multimodal-first design.",
+      "example": "Figma's new AI assistant lets designers upload hand-drawn sketches and generates working prototypes in minutes. Users can iterate by speaking changes or pointing at elements they want modified.",
+      "action": "Identify your product's core use case and prototype how users would complete it using only voice commands or camera input."
+    },
+    {
+      "trend": "⚡ Real-Time AI Changes User Expectations",
+      "what": "Latency for AI responses dropped below 200ms with new model architectures and edge deployment. Users now expect instant AI responses, not the spinning wheels we've normalized. Real-time collaboration with AI feels natural when it responds as fast as autocomplete. This speed enables entirely new interaction patterns where AI becomes a thinking partner rather than a tool you wait for.",
+      "pmImpact": "Batch processing and async AI responses feel broken to users now. Your product needs to provide instant feedback and progressive enhancement as AI processes more complex requests. User flows need to account for AI that gets smarter during the interaction. The mental model shifts from 'I submit a request and wait' to 'we're thinking through this together.' Your success metrics need to include AI response time as a core UX requirement.",
+      "example": "Superhuman's AI email writing now suggests completions as users type, adjusting tone and content based on recipient analysis in real-time. Users don't notice they're using AI because it feels like advanced autocomplete.",
+      "action": "Audit every AI interaction in your product and identify opportunities to provide instant feedback before full processing completes."
+    },
+    {
+      "trend": "🔗 AI Integration Platforms Replace Custom Development",
+      "what": "Zapier's AI Actions and Microsoft's Copilot Studio let non-technical users build complex AI workflows without code. The barrier to AI integration dropped to nearly zero. Small teams can now build AI-powered products that would have required dedicated ML engineers six months ago. The abstraction layer is so good that product teams can prototype and ship AI features faster than engineering teams can evaluate them.",
+      "pmImpact": "You can now validate AI features before involving engineering. Prototype with no-code tools, test with real users, then build the production version. This changes how you approach product discovery and iteration cycles. The risk is building AI features that feel bolted-on instead of native. Your job becomes orchestrating these AI building blocks into coherent product experiences that feel intentional, not cobbled together.",
+      "example": "Airtable's new AI automation builder lets users create workflows like 'when a new lead comes in, research the company, write a personalized email, and schedule a follow-up' without writing code or API calls.",
+      "action": "Pick one AI feature on your roadmap and build a working prototype this week using no-code AI tools before writing any requirements."
+    }
+  ],
+  "closing": "The AI capabilities available today would have been science fiction two years ago. By Q4 2026, what we're calling breakthrough features will be table stakes. The companies building the next generation of products aren't waiting for perfect AI. They're shipping imperfect AI that gets better every month. Your users won't forgive you for being cautious when your competitors are being bold. The question isn't whether AI will change your product category. It's whether you'll lead that change or react to it.",
+  "takeaway": "AI stopped being a feature you add and became the foundation you build on.",
+  "postType": "trends",
+  "slug": "why-your-ai-roadmap-just-got-obsolete-and-what-to-build-instead",
+  "generatedAt": "2026-04-20T20:49:41.668Z",
+  "status": "published",
+  "wordCount": 219
+}

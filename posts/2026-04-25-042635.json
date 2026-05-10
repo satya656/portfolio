@@ -1,0 +1,53 @@
+{
+  "title": "AI Agents Are Eating Your Roadmap (And 4 Other Trends That Matter This Week)",
+  "tldr": [
+    "Multimodal AI now handles complex workflows without custom training",
+    "Code generation tools are making non-technical PMs surprisingly powerful",
+    "Real-time personalization is becoming table stakes, not a competitive advantage"
+  ],
+  "intro": "Three months ago, I watched a PM at a Series B startup use Claude to analyze 500 customer support tickets, generate user personas, and write PRDs. The entire process took two hours. Last week, that same PM shipped a feature using AI-generated code she barely understood. The feature works perfectly.\n\nThe gap between AI capabilities and how we actually use them as PMs is shrinking fast. New models drop every few weeks. Tools that seemed impossible six months ago are now free browser extensions. Your job isn't changing gradually anymore. It's changing this month.",
+  "sections": [
+    {
+      "trend": "🤖 Agentic Workflows Replace Manual Research",
+      "what": "The latest Claude and GPT models can now handle multi-step research tasks that used to require human oversight at every stage. They analyze data, synthesize insights, generate hypotheses, and even suggest follow-up questions. These aren't simple chatbot interactions. They're sustained workflows that run for hours with minimal input.\n\nPerplexity Pro and similar tools now deliver research quality that matches junior analysts. They cite sources, cross-reference claims, and identify contradictions in data. The output feels less like AI assistance and more like having a research team.",
+      "pmImpact": "Your discovery phase just got 10x faster. Market research that took weeks now happens in days. Competitive analysis updates automatically. You can run user research on hundreds of data points instead of cherry-picking a few interviews.\n\nThe real shift is strategic. You'll spend less time gathering information and more time deciding what information matters. The bottleneck moves from research capacity to research judgment. PMs who can ask better questions will dominate those who just ask more questions.",
+      "example": "Notion's PM team uses custom GPT agents to analyze feature usage patterns across their entire user base, automatically generating insights about which features correlate with retention. The agents identify usage anomalies and suggest A/B tests without human prompting.",
+      "action": "Set up one automated research workflow this week. Pick a recurring analysis task and build an AI agent to handle it."
+    },
+    {
+      "trend": "💻 No-Code Becomes Low-Code for PMs",
+      "what": "GitHub Copilot and Cursor have evolved beyond helping engineers write code. They now generate functional prototypes from plain English descriptions. PMs can describe a feature and get working code, complete with basic UI and database connections. The code isn't production-ready, but it's good enough to test concepts.\n\nReplit's new AI features let you build and deploy simple web apps in minutes. Vercel's v0 generates React components that actually work. These tools don't require coding knowledge. They require product thinking.",
+      "pmImpact": "You can now prototype complex ideas without engineering resources. Want to test a new dashboard layout? Build it. Curious about a recommendation algorithm? Code it. The feedback loop between idea and execution just collapsed from weeks to hours.\n\nThis changes how you work with engineers. Instead of describing features in PRDs, you can show working examples. Engineering discussions shift from \"what should this do\" to \"how should we build this properly.\" Your prototypes become the starting point for technical design.",
+      "example": "Linear's PM built their first version of project templates using Cursor, then handed the working prototype to engineers for production implementation. The feature shipped 40% faster because the technical requirements were already proven.",
+      "action": "Build one working prototype this week using Cursor or Replit. Pick a small feature you've been discussing with engineering."
+    },
+    {
+      "trend": "📊 Real-Time Personalization Becomes Default",
+      "what": "Embeddings-based personalization now runs in real-time without massive infrastructure. New vector databases like Pinecone and Weaviate handle millions of user preferences instantly. Machine learning models that used to require ML teams can now be deployed by product teams using pre-built APIs.\n\nThe technical barriers disappeared. Personalization is becoming as easy to implement as A/B testing was five years ago. Every user interaction can now influence what they see next, not just in the next session.",
+      "pmImpact": "Personalization stops being a nice-to-have feature and becomes basic product hygiene. Users will expect every product to adapt to their behavior immediately. Static experiences will feel broken. Your product strategy needs to assume personalized experiences from day one.\n\nThe competitive advantage shifts from having personalization to having better personalization. The quality of your user data and the sophistication of your preference models become key differentiators. PMs need to think like data scientists when designing user interactions.",
+      "example": "Spotify's Discover Weekly was revolutionary in 2015. Now Superhuman generates personalized email summaries in real-time based on user reading patterns, and users expect similar intelligence from every productivity tool.",
+      "action": "Audit your product for personalization opportunities. Identify three user interactions that could be personalized and prioritize them."
+    },
+    {
+      "trend": "🔍 AI Quality Assurance Outperforms Human Testing",
+      "what": "GPT-4V and Claude can now analyze screenshots, identify UI bugs, and write detailed QA reports. They spot inconsistencies humans miss and test edge cases humans forget. AI testing tools like Meticulous and Testim use computer vision to catch regressions automatically.\n\nThese tools don't just find bugs. They understand user intent and identify when features work technically but fail experientially. They can simulate different user personas and test workflows from multiple perspectives simultaneously.",
+      "pmImpact": "Your QA process can now scale with your development speed. Every PR can be tested by AI before human review. User acceptance testing can happen continuously instead of in sprints. You catch experience problems before they reach users.\n\nThis changes release planning fundamentally. You can ship faster with higher confidence. QA stops being a bottleneck and becomes continuous validation. PMs can focus on defining good user experiences instead of just functional requirements.",
+      "example": "Figma's team uses AI to automatically test every design handoff against their design system guidelines, catching inconsistencies that human reviewers previously missed about 30% of the time.",
+      "action": "Implement AI-powered screenshot testing for your most critical user flows. Start with your onboarding sequence."
+    },
+    {
+      "trend": "📈 Predictive Analytics Becomes Actionable Intelligence",
+      "what": "New AI models can predict user behavior with scary accuracy. They identify users likely to churn weeks before traditional metrics show problems. They predict which features will drive engagement before you build them. The predictions come with confidence intervals and suggested actions.\n\nThese aren't black box algorithms. Modern tools explain their predictions and suggest specific interventions. They tell you why a user will churn and what you can do to prevent it. Prediction becomes prescription.",
+      "pmImpact": "You can now prevent problems instead of just measuring them. Churn prevention becomes proactive, not reactive. Feature prioritization gets driven by predicted impact, not just current usage. Your product decisions become evidence-based in ways that weren't possible before.\n\nThe shift is philosophical. You move from building features users ask for to building features they'll need before they know it. Product intuition gets augmented by predictive intelligence. The best PMs will combine human creativity with AI foresight.",
+      "example": "Slack's PM team uses predictive models to identify teams likely to reduce usage and automatically surfaces relevant features or content to re-engage them before the decline becomes visible in standard metrics.",
+      "action": "Set up one predictive metric this week. Start with churn prediction for your most engaged user segment."
+    }
+  ],
+  "closing": "These trends aren't coming next year. They're happening now. The PMs who adapt fastest will build the products that define the next decade. The ones who wait will spend 2027 playing catch-up.\n\nYour users won't care that you're still figuring out AI. They'll just use products that work better. Start experimenting this week. The tools are ready. The question is whether you are.",
+  "takeaway": "AI isn't changing product management gradually, it's changing it this month.",
+  "postType": "trends",
+  "slug": "ai-agents-are-eating-your-roadmap-and-4-other-trends-that-matter-this-week",
+  "generatedAt": "2026-04-25T09:02:51.965Z",
+  "status": "draft",
+  "wordCount": 210
+}
