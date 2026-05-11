@@ -242,9 +242,9 @@
     .cms-add-btn:hover { background:#e8f0fe; }
   </style>
 </head>
-<body>
+<body style="display:none">
 
-  
+
 <!-- TOP NAV -->
 <div class="g-topnav">
   <div class="g-topnav-left">
@@ -755,24 +755,45 @@
   <div id="toast" class="toast"></div>
 
   <script>
-    const API = 'http://localhost:3001';
+    const API = '';
 
     // ── Auth ─────────────────────────────────────────────────────────────────
     function getAuthHeader() {
-      let creds = sessionStorage.getItem('dash_creds');
-      if (!creds) {
-        const user = prompt('Manage — Username:') || '';
-        const pass = prompt('Manage — Password:') || '';
-        creds = btoa(user + ':' + pass);
-        sessionStorage.setItem('dash_creds', creds);
-      }
-      return 'Basic ' + creds;
+      return 'Basic ' + sessionStorage.getItem('dash_creds');
     }
 
     function authFetch(url, opts = {}) {
       opts.headers = { ...(opts.headers || {}), 'Authorization': getAuthHeader() };
       return fetch(url, opts);
     }
+
+    async function requireLogin() {
+      let creds = sessionStorage.getItem('dash_creds');
+      if (creds) {
+        const ok = await verifyCredentials(creds);
+        if (ok) { document.body.style.display = ''; return; }
+        sessionStorage.removeItem('dash_creds');
+      }
+      while (true) {
+        const user = prompt('Username:');
+        if (user === null) { document.body.innerHTML = '<p style="padding:40px;font-family:arial">Access denied.</p>'; document.body.style.display = ''; return; }
+        const pass = prompt('Password:');
+        if (pass === null) { document.body.innerHTML = '<p style="padding:40px;font-family:arial">Access denied.</p>'; document.body.style.display = ''; return; }
+        creds = btoa(user + ':' + pass);
+        const ok = await verifyCredentials(creds);
+        if (ok) { sessionStorage.setItem('dash_creds', creds); document.body.style.display = ''; return; }
+        alert('Invalid credentials. Please try again.');
+      }
+    }
+
+    async function verifyCredentials(creds) {
+      try {
+        const res = await fetch('/api/posts', { headers: { 'Authorization': 'Basic ' + creds } });
+        return res.ok;
+      } catch { return false; }
+    }
+
+    requireLogin();
 
     // ── Dash tab switching ───────────────────────────────────────────────────
     function showDashTab(tab) {
