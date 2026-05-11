@@ -72,7 +72,7 @@ const SHARED_CSS = `
     font-family: arial, sans-serif;
     background: #fff;
     color: #202124;
-    font-size: 14px;
+    font-size: 16px;
   }
   a { text-decoration: none; }
 
@@ -176,7 +176,7 @@ const SHARED_CSS = `
     line-height: 1.3; margin-bottom: 4px;
   }
   .g-result-title:hover { text-decoration: underline; }
-  .g-result-snippet { font-size: 14px; color: #3c4043; line-height: 1.6; margin-bottom: 8px; }
+  .g-result-snippet { font-size: 16px; color: #3c4043; line-height: 1.6; margin-bottom: 8px; }
   .g-result-date { color: #70757a; }
   .g-result-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
   .g-badge {
@@ -223,11 +223,11 @@ const SHARED_CSS = `
   .b-tldr-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
   .b-tldr-head span { font-size: 12px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; }
   .b-tldr ol { padding-left: 20px; }
-  .b-tldr li { font-size: 14px; color: #202124; line-height: 1.6; margin-bottom: 5px; }
+  .b-tldr li { font-size: 16px; color: #202124; line-height: 1.6; margin-bottom: 5px; }
   .b-prose p { font-size: 15px; color: #3c4043; line-height: 1.7; margin-bottom: 14px; }
   .b-section { margin-bottom: 32px; }
   .b-section h2 { font-size: 18px; font-weight: 700; color: #202124; margin-bottom: 12px; }
-  .b-section p { font-size: 14px; color: #3c4043; line-height: 1.7; margin-bottom: 10px; }
+  .b-section p { font-size: 16px; color: #3c4043; line-height: 1.7; margin-bottom: 10px; }
   .b-pm-impact { border-left: 4px solid #1a73e8; padding-left: 14px; margin-bottom: 12px; }
   .b-pm-impact-label { font-size: 11px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
   .b-example { background: #f8f9fa; border: 1px solid #dadce0; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; }
@@ -242,7 +242,7 @@ const SHARED_CSS = `
     border-radius: 8px; padding: 24px; text-align: center; margin: 28px 0;
   }
   .b-takeaway-label { font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
-  .b-takeaway blockquote { font-size: 16px; font-weight: 600; color: #78350f; line-height: 1.4; max-width: 520px; margin: 0 auto; }
+  .b-takeaway blockquote { font-size: 18px; font-weight: 600; color: #78350f; line-height: 1.4; max-width: 520px; margin: 0 auto; }
   .b-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #70757a; margin-top: 28px; }
   .b-back-link:hover { color: #1a73e8; text-decoration: underline; }
 
