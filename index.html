@@ -572,7 +572,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>Blog
   </a>
   <a href="https://www.linkedin.com/in/satyanarayans/" target="_blank" class="g-tab" id="tab-linkedin">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn
+    <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/>LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;margin-left:2px;opacity:0.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
   </a>
   <a href="dashboard.html" class="g-tab g-tab-sep">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Manage
@@ -816,9 +816,6 @@ function renderResults(c) {
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Get in touch
         </a>
-        <a class="g-cta-btn secondary" href="${esc(p.linkedinUrl)}" target="_blank">
-          <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:12px;height:12px;border-radius:1px" alt=""/> View LinkedIn
-        </a>
         <a class="g-cta-btn secondary" href="#" onclick="showTab('resume');return false;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           View Resume
@@ -826,6 +823,9 @@ function renderResults(c) {
         <a class="g-cta-btn secondary" href="blog.html">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
           View Blog
+        </a>
+        <a class="g-cta-btn secondary" href="${esc(p.linkedinUrl)}" target="_blank">
+          <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:12px;height:12px;border-radius:1px" alt=""/> View LinkedIn
         </a>
       </div>
     </div>
