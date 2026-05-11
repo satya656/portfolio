@@ -208,6 +208,76 @@
     .g-topnav-left { display: none; }
     .g-topnav a:not(.g-signin) { display: none; }
   }
+  .dm-toggle { background:none; border:1px solid #dadce0; border-radius:20px; padding:4px 10px; font-size:12px; color:#5f6368; cursor:pointer; display:inline-flex; align-items:center; gap:5px; font-family:arial,sans-serif; }
+  .dm-toggle:hover { background:#f1f3f4; }
+  body.dark { background:#202124; color:#e8eaed; }
+  body.dark .g-topnav { border-color:#3c4043; background:#202124; }
+  body.dark .g-topnav a { color:#9aa0a6; }
+  body.dark .g-topnav a:hover { color:#e8eaed; }
+  body.dark .g-searchbar { border-color:#3c4043; background:#303134; box-shadow:none; }
+  body.dark .g-searchbar input { color:#e8eaed; background:transparent; }
+  body.dark .g-searchbar svg { color:#9aa0a6; }
+  body.dark .g-search-btn { background:#303134; border-color:#303134; color:#e8eaed; }
+  body.dark .g-tabs { border-color:#3c4043; }
+  body.dark .g-tab { color:#9aa0a6; }
+  body.dark .g-tab.active { color:#8ab4f8; border-bottom-color:#8ab4f8; }
+  body.dark .g-tab:hover:not(.active) { color:#e8eaed; border-bottom-color:#5f6368; }
+  body.dark .g-tab-sep { border-color:#3c4043; }
+  body.dark .g-sidebar-name { color:#e8eaed; }
+  body.dark .g-sidebar-title { color:#9aa0a6; }
+  body.dark .g-sidebar-section { color:#9aa0a6; border-color:#3c4043; }
+  body.dark .g-sidebar-item { color:#bdc1c6; }
+  body.dark .g-sidebar-item strong { color:#e8eaed; }
+  body.dark .g-result-count { color:#9aa0a6; }
+  body.dark .g-result-url { color:#bdc1c6; }
+  body.dark .g-result-title { color:#8ab4f8; }
+  body.dark .g-result-snippet { color:#bdc1c6; }
+  body.dark .g-result-date { color:#9aa0a6; }
+  body.dark .g-badge-blue { color:#8ab4f8; background:#1a2744; border-color:#3d5a9e; }
+  body.dark .g-badge-green { color:#81c995; background:#0d3b1f; border-color:#1e6b3a; }
+  body.dark .g-tldr-chip { color:#8ab4f8; background:#1a2744; border-color:#3d5a9e; }
+  body.dark .g-widget { background:#292a2d; border-color:#3c4043; }
+  body.dark .g-widget-label { color:#9aa0a6; }
+  body.dark .g-widget p { color:#9aa0a6; }
+  body.dark .g-widget-issue-title { color:#8ab4f8; }
+  body.dark .g-widget-issue-date { color:#9aa0a6; }
+  body.dark .g-footer { background:#292a2d; border-color:#3c4043; color:#9aa0a6; }
+  body.dark .g-footer a { color:#9aa0a6; }
+  body.dark .dm-toggle { border-color:#3c4043; color:#9aa0a6; }
+  body.dark .dm-toggle:hover { background:#303134; }
+  body.dark .g-cta { background:#1a2744; border-color:#3d5a9e; }
+  body.dark .g-cta-text { color:#e8eaed; }
+  body.dark .g-cta-btn.secondary { background:#303134; color:#8ab4f8; border-color:#3c4043; }
+  body.dark .g-cta-btn.secondary:hover { background:#3c4043; }
+  body.dark .g-exp-row { border-color:#3c4043; }
+  body.dark .g-exp-role { color:#e8eaed; }
+  body.dark .g-exp-co { color:#8ab4f8; }
+  body.dark .g-exp-date { color:#9aa0a6; }
+  body.dark .g-exp-snippet { color:#bdc1c6; }
+  body.dark .g-exp-detail { background:#292a2d; border-color:#3c4043; }
+  body.dark .g-exp-bullet { color:#bdc1c6; }
+  body.dark .g-featured { background:#292a2d; border-color:#3c4043; }
+  body.dark .g-featured-label { color:#9aa0a6; }
+  body.dark .g-featured-src { color:#9aa0a6; }
+  body.dark .g-skill-grp h4 { color:#9aa0a6; }
+  body.dark .g-skill-tag { color:#8ab4f8; background:#1a2744; }
+  body.dark .g-keywords { }
+  body.dark .b-article h1 { color:#e8eaed; }
+  body.dark .b-tldr { background:#1a2744; border-color:#3d5a9e; }
+  body.dark .b-tldr li { color:#e8eaed; }
+  body.dark .b-prose p { color:#bdc1c6; }
+  body.dark .b-section h2 { color:#e8eaed; }
+  body.dark .b-section p { color:#bdc1c6; }
+  body.dark .b-pm-impact { border-color:#8ab4f8; }
+  body.dark .b-pm-impact-label { color:#8ab4f8; }
+  body.dark .b-example { background:#292a2d; border-color:#3c4043; }
+  body.dark .b-example-label { color:#9aa0a6; }
+  body.dark .b-example p { color:#bdc1c6; }
+  body.dark .b-takeaway { background:#2a2000; border-color:#5a4500; }
+  body.dark .b-takeaway-label { color:#fde68a; }
+  body.dark .b-takeaway blockquote { color:#fde68a; }
+  body.dark .b-back-link { color:#9aa0a6; }
+  body.dark .b-back-link:hover { color:#8ab4f8; }
 </style>
 </head>
 <body>
@@ -224,6 +294,7 @@
   <a href="https://www.linkedin.com/in/satyanarayans/" target="_blank" style="display:inline-flex;align-items:center;gap:4px;color:#0077b5;font-weight:500">
     <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/> LinkedIn
   </a>
+  <button class="dm-toggle" onclick="toggleDarkMode()" id="dm-btn">🌙 Dark</button>
   <a class="g-signin" href="tel:6789869290">678-986-9290</a>
 </div>
 
@@ -414,5 +485,20 @@
     <a href="https://www.linkedin.com/in/satyanarayans/" target="_blank">LinkedIn</a>
   </footer>
 
+<script>
+function toggleDarkMode() {
+  const dark = document.body.classList.toggle('dark');
+  localStorage.setItem('dm', dark ? '1' : '');
+  const btn = document.getElementById('dm-btn');
+  if (btn) btn.textContent = dark ? '☀️ Light' : '🌙 Dark';
+}
+(function() {
+  if (localStorage.getItem('dm')) document.body.classList.add('dark');
+})();
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('dm-btn');
+  if (btn && localStorage.getItem('dm')) btn.textContent = '☀️ Light';
+});
+</script>
 </body>
 </html>
