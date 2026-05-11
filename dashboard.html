@@ -240,10 +240,69 @@
     .rptr-row { display:flex; gap:6px; align-items:center; margin-bottom:6px; }
     .cms-add-btn { font-size:12px; color:#1a73e8; background:none; border:1px dashed #c5d8fd; border-radius:4px; padding:5px 12px; cursor:pointer; margin-top:4px; }
     .cms-add-btn:hover { background:#e8f0fe; }
+
+    /* ── DARK MODE TOGGLE ── */
+    .dm-toggle { background:none; border:1px solid #dadce0; border-radius:20px; padding:4px 10px; font-size:12px; color:#5f6368; cursor:pointer; display:inline-flex; align-items:center; gap:5px; font-family:arial,sans-serif; }
+    .dm-toggle:hover { background:#f1f3f4; }
+
+    /* ── DARK MODE ── */
+    body.dark { background:#202124; color:#e8eaed; }
+    body.dark .g-topnav { border-color:#3c4043; }
+    body.dark .g-topnav a { color:#9aa0a6; }
+    body.dark .g-topnav a:hover { color:#e8eaed; }
+    body.dark .g-searchbar { border-color:#3c4043; background:#303134; box-shadow:none; }
+    body.dark .g-searchbar input { color:#e8eaed; }
+    body.dark .g-searchbar svg { color:#9aa0a6; }
+    body.dark .g-search-btn { background:#303134; border-color:#303134; color:#e8eaed; }
+    body.dark .g-tabs { border-color:#3c4043; }
+    body.dark .g-tab { color:#9aa0a6; }
+    body.dark .g-tab:hover:not(.active) { color:#e8eaed; border-bottom-color:#5f6368; }
+    body.dark .g-tab-sep { border-color:#3c4043; }
+    body.dark .dash-tab { color:#9aa0a6; }
+    body.dark .dash-tab:hover { color:#e8eaed; }
+    body.dark .g-sidebar-name { color:#e8eaed; }
+    body.dark .g-sidebar-section { color:#9aa0a6; border-color:#3c4043; }
+    body.dark .g-sidebar-item { color:#bdc1c6; }
+    body.dark .g-sidebar-item strong { color:#e8eaed; }
+    body.dark th { color:#9aa0a6; border-color:#3c4043; }
+    body.dark td { border-color:#3c4043; color:#bdc1c6; }
+    body.dark .cms-sec { border-color:#3c4043; box-shadow:none; }
+    body.dark .cms-sec-head { background:#292a2d; color:#e8eaed; }
+    body.dark .cms-sec-head::after { color:#9aa0a6; }
+    body.dark .cms-input { background:#303134; border-color:#3c4043; color:#e8eaed; }
+    body.dark .cms-input:focus { border-color:#8ab4f8; box-shadow:0 0 0 2px rgba(138,180,248,.15); }
+    body.dark .cms-label { color:#9aa0a6; }
+    body.dark .cms-add-btn { color:#8ab4f8; border-color:#4a5568; }
+    body.dark .cms-add-btn:hover { background:#303134; }
+    body.dark select, body.dark .dash-select { background:#303134; border-color:#3c4043; color:#e8eaed; }
+    body.dark .g-widget { background:#292a2d; border-color:#3c4043; }
+    body.dark .g-widget-label { color:#9aa0a6; }
+    body.dark .g-widget p { color:#9aa0a6; }
+    body.dark .g-footer { background:#292a2d; border-color:#3c4043; color:#9aa0a6; }
+    body.dark .g-footer a { color:#9aa0a6; }
+    body.dark .dm-toggle { border-color:#3c4043; color:#9aa0a6; }
+    body.dark .dm-toggle:hover { background:#303134; }
+    body.dark #serverStatus.online  { background:#0d652d22; color:#81c995; border-color:#0d652d; }
+    body.dark #serverStatus.offline { background:#b3261e22; color:#f28b82; border-color:#b3261e; }
   </style>
 </head>
-<body style="display:none">
+<body>
 
+<div id="auth-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;z-index:9999;font-family:arial,sans-serif">
+  <div style="background:#fff;border-radius:12px;padding:36px 40px;width:320px;box-shadow:0 8px 32px rgba(0,0,0,.25)">
+    <div style="font-size:32px;text-align:center;margin-bottom:12px">🔐</div>
+    <h2 style="font-size:17px;color:#202124;margin-bottom:20px;text-align:center">Management Dashboard</h2>
+    <label style="font-size:12px;color:#5f6368;display:block;margin-bottom:4px">Username</label>
+    <input id="auth-user" type="text" autocomplete="username" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #dadce0;border-radius:4px;margin-bottom:12px;outline:none;font-family:arial,sans-serif" />
+    <label style="font-size:12px;color:#5f6368;display:block;margin-bottom:4px">Password</label>
+    <input id="auth-pass" type="password" autocomplete="current-password" style="width:100%;padding:8px 10px;font-size:14px;border:1px solid #dadce0;border-radius:4px;margin-bottom:6px;outline:none;font-family:arial,sans-serif" />
+    <p id="auth-err" style="font-size:12px;color:#c5221f;min-height:16px;margin-bottom:12px"></p>
+    <button id="auth-submit" style="width:100%;background:#1a73e8;color:#fff;border:none;border-radius:4px;padding:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:arial,sans-serif">Sign in</button>
+    <div style="text-align:center;margin-top:14px">
+      <a href="index.html" style="font-size:12px;color:#5f6368;text-decoration:underline">Back to Portfolio</a>
+    </div>
+  </div>
+</div>
 
 <!-- TOP NAV -->
 <div class="g-topnav">
@@ -256,6 +315,7 @@
   <a href="https://www.linkedin.com/in/satyanarayans/" target="_blank" style="display:inline-flex;align-items:center;gap:4px;color:#0077b5;font-weight:500">
     <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/> LinkedIn
   </a>
+  <button class="dm-toggle" onclick="toggleDarkMode()" id="dm-btn">🌙 Dark</button>
   <a class="g-signin" href="tel:6789869290">678-986-9290</a>
 </div>
 
@@ -767,33 +827,68 @@
       return fetch(url, opts);
     }
 
+    // Wire up login form immediately
+    document.getElementById('auth-submit').addEventListener('click', submitLogin);
+    document.getElementById('auth-pass').addEventListener('keydown', e => { if (e.key === 'Enter') submitLogin(); });
+    document.getElementById('auth-user').addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('auth-pass').focus(); });
+    document.getElementById('auth-user').focus();
+
     async function requireLogin() {
-      let creds = sessionStorage.getItem('dash_creds');
-      if (creds) {
-        const ok = await verifyCredentials(creds);
-        if (ok) { document.body.style.display = ''; return; }
-        sessionStorage.removeItem('dash_creds');
-      }
-      while (true) {
-        const user = prompt('Username:');
-        if (user === null) { document.body.innerHTML = '<p style="padding:40px;font-family:arial">Access denied.</p>'; document.body.style.display = ''; return; }
-        const pass = prompt('Password:');
-        if (pass === null) { document.body.innerHTML = '<p style="padding:40px;font-family:arial">Access denied.</p>'; document.body.style.display = ''; return; }
-        creds = btoa(user + ':' + pass);
-        const ok = await verifyCredentials(creds);
-        if (ok) { sessionStorage.setItem('dash_creds', creds); document.body.style.display = ''; return; }
-        alert('Invalid credentials. Please try again.');
+      const creds = sessionStorage.getItem('dash_creds');
+      if (!creds) return;
+      const [user, pass] = atob(creds).split(':');
+      const ok = await verifyCredentials(user, pass);
+      if (ok) { document.getElementById('auth-overlay').style.display = 'none'; initDashboard(); return; }
+      sessionStorage.removeItem('dash_creds');
+    }
+
+    async function submitLogin() {
+      const user = document.getElementById('auth-user').value.trim();
+      const pass = document.getElementById('auth-pass').value;
+      const err = document.getElementById('auth-err');
+      const btn = document.getElementById('auth-submit');
+      if (!user || !pass) { err.textContent = 'Please enter username and password.'; return; }
+      btn.textContent = 'Signing in…';
+      btn.disabled = true;
+      err.textContent = '';
+      const ok = await verifyCredentials(user, pass);
+      if (ok) {
+        btn.textContent = '✓ Success';
+        sessionStorage.setItem('dash_creds', btoa(user + ':' + pass));
+        document.getElementById('auth-overlay').style.display = 'none';
+        initDashboard();
+      } else {
+        err.textContent = 'Invalid credentials. Please try again.';
+        btn.textContent = 'Sign in';
+        btn.disabled = false;
+        document.getElementById('auth-pass').value = '';
+        document.getElementById('auth-pass').focus();
       }
     }
 
-    async function verifyCredentials(creds) {
+    async function verifyCredentials(user, pass) {
       try {
-        const res = await fetch('/api/posts', { headers: { 'Authorization': 'Basic ' + creds } });
+        const res = await fetch('/api/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user, pass }),
+        });
         return res.ok;
       } catch { return false; }
     }
 
     requireLogin();
+
+    // ── Dark mode ─────────────────────────────────────────────────────────────
+    function toggleDarkMode() {
+      const dark = document.body.classList.toggle('dark');
+      localStorage.setItem('dash_dark', dark ? '1' : '');
+      document.getElementById('dm-btn').textContent = dark ? '☀️ Light' : '🌙 Dark';
+    }
+    if (localStorage.getItem('dash_dark')) {
+      document.body.classList.add('dark');
+      document.getElementById('dm-btn').textContent = '☀️ Light';
+    }
 
     // ── Dash tab switching ───────────────────────────────────────────────────
     function showDashTab(tab) {
@@ -1045,8 +1140,10 @@
       document.getElementById('generateBtn').disabled = true;
       return false;
     }
-    checkServer();
-    setInterval(checkServer, 8000);
+    function initDashboard() {
+      checkServer();
+      setInterval(checkServer, 8000);
+    }
 
     // ── Generate ─────────────────────────────────────────────────────────────
     async function generatePost() {

@@ -46,7 +46,6 @@ function requireAuth(req, res) {
     const [user, pass] = Buffer.from(encoded, "base64").toString().split(":");
     if (user === DASH_USER && pass === DASH_PASS) return true;
   }
-  res.setHeader("WWW-Authenticate", 'Basic realm="Management Dashboard"');
   res.writeHead(401, { "Content-Type": "text/plain" });
   res.end("Unauthorized");
   return false;
@@ -159,6 +158,13 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(204);
     res.end();
     return;
+  }
+
+  // POST /api/verify — checks credentials via JSON body
+  if (req.method === "POST" && url.pathname === "/api/verify") {
+    const body = await readBody(req);
+    if (body.user === DASH_USER && body.pass === DASH_PASS) return json(res, 200, { ok: true });
+    return json(res, 401, { ok: false });
   }
 
   // GET /api/portfolio is public — read by the main portfolio page
