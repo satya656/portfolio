@@ -35,10 +35,15 @@ const PORTFOLIO_CONTENT_FILE = path.join(DATA_DIR, "portfolio-content.json");
 const SCHEDULE_FILE = path.join(DATA_DIR, "schedule.json");
 const PORT = process.env.PORT || 3001;
 
-// Seed portfolio-content.json into DATA_DIR on first run if missing
-if (!fs.existsSync(PORTFOLIO_CONTENT_FILE)) {
+// Seed portfolio-content.json into DATA_DIR if missing or empty
+{
   const localSrc = path.join(__dirname, "portfolio-content.json");
-  if (fs.existsSync(localSrc)) {
+  let needsSeed = !fs.existsSync(PORTFOLIO_CONTENT_FILE);
+  if (!needsSeed) {
+    try { const parsed = JSON.parse(fs.readFileSync(PORTFOLIO_CONTENT_FILE, "utf-8")); if (!parsed || !parsed.personal) needsSeed = true; }
+    catch { needsSeed = true; }
+  }
+  if (needsSeed && fs.existsSync(localSrc)) {
     fs.mkdirSync(DATA_DIR, { recursive: true });
     fs.copyFileSync(localSrc, PORTFOLIO_CONTENT_FILE);
     console.log(`[init] Seeded portfolio-content.json to ${PORTFOLIO_CONTENT_FILE}`);
