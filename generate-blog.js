@@ -80,15 +80,15 @@ const SHARED_CSS = `
   .g-topnav {
     display: flex; justify-content: flex-end; align-items: center;
     padding: 8px 20px; gap: 16px;
-    border-bottom: 1px solid #ebebeb; font-size: 13px;
+    border-bottom: 1px solid #ebebeb; font-size: 16px;
   }
-  .g-topnav a { color: #5f6368; font-size: 13px; }
+  .g-topnav a { color: #5f6368; font-size: 16px; }
   .g-topnav a:hover { text-decoration: underline; color: #202124; }
   .g-topnav-left { display: flex; gap: 20px; margin-right: auto; }
   .g-signin {
     background: #1a73e8; color: #fff !important;
     padding: 8px 18px; border-radius: 4px;
-    font-size: 13px; font-weight: 500;
+    font-size: 16px; font-weight: 500;
   }
   .g-signin:hover { background: #1557b0; text-decoration: none !important; }
 
@@ -118,7 +118,7 @@ const SHARED_CSS = `
   .g-search-btn {
     background: #f8f9fa; border: 1px solid #f8f9fa;
     border-radius: 4px; padding: 8px 16px;
-    font-size: 14px; color: #202124; cursor: pointer; white-space: nowrap;
+    font-size: 16px; color: #202124; cursor: pointer; white-space: nowrap;
   }
   .g-search-btn:hover { box-shadow: 0 1px 3px rgba(0,0,0,.2); border-color: #dadce0; }
 
@@ -129,7 +129,7 @@ const SHARED_CSS = `
     border-bottom: 1px solid #ebebeb; margin-top: 10px;
   }
   .g-tab {
-    padding: 10px 14px; font-size: 13px; color: #5f6368;
+    padding: 10px 14px; font-size: 16px; color: #5f6368;
     cursor: pointer; border-bottom: 3px solid transparent;
     display: flex; align-items: center; gap: 5px; white-space: nowrap;
     text-decoration: none;
@@ -150,14 +150,14 @@ const SHARED_CSS = `
     width: 154px; flex-shrink: 0;
     padding: 18px 30px 0 0;
   }
-  .g-sidebar-name { font-size: 13px; font-weight: 700; color: #202124; margin-bottom: 2px; }
-  .g-sidebar-title { font-size: 11px; color: #5f6368; margin-bottom: 14px; line-height: 1.4; }
+  .g-sidebar-name { font-size: 16px; font-weight: 700; color: #202124; margin-bottom: 2px; }
+  .g-sidebar-title { font-size: 16px; color: #5f6368; margin-bottom: 14px; line-height: 1.4; }
   .g-sidebar-section {
-    font-size: 11px; font-weight: 700; color: #70757a;
+    font-size: 16px; font-weight: 700; color: #70757a;
     text-transform: uppercase; letter-spacing: .5px;
     margin: 12px 0 6px; border-top: 1px solid #ebebeb; padding-top: 12px;
   }
-  .g-sidebar-item { font-size: 12px; color: #4d5156; line-height: 1.8; }
+  .g-sidebar-item { font-size: 16px; color: #4d5156; line-height: 1.8; }
   .g-sidebar-item strong { color: #202124; }
 
   /* ── RESULTS COLUMN ── */
@@ -165,12 +165,12 @@ const SHARED_CSS = `
     flex: 1; min-width: 0;
     padding: 12px 0 40px 20px; max-width: 660px;
   }
-  .g-result-count { font-size: 13px; color: #70757a; margin-bottom: 18px; }
+  .g-result-count { font-size: 16px; color: #70757a; margin-bottom: 18px; }
 
   /* ── POST CARD (styled as search result) ── */
   .g-result { margin-bottom: 28px; }
   .g-result-url-row { display: flex; align-items: center; gap: 8px; margin-bottom: 2px; }
-  .g-result-url { font-size: 12px; color: #202124; }
+  .g-result-url { font-size: 16px; color: #202124; }
   .g-result-title {
     font-size: 20px; color: #1a0dab; font-weight: normal;
     line-height: 1.3; margin-bottom: 4px;
@@ -180,14 +180,14 @@ const SHARED_CSS = `
   .g-result-date { color: #70757a; }
   .g-result-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
   .g-badge {
-    display: inline-block; font-size: 11px; font-weight: 500;
+    display: inline-block; font-size: 16px; font-weight: 500;
     padding: 2px 8px; border-radius: 20px; border: 1px solid;
   }
   .g-badge-blue { color: #1a73e8; background: #e8f0fe; border-color: #c5d8fd; }
   .g-badge-green { color: #137333; background: #e6f4ea; border-color: #b7d9c4; }
   .g-tldr-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
   .g-tldr-chip {
-    font-size: 11px; color: #1a73e8; background: #e8f0fe;
+    font-size: 16px; color: #1a73e8; background: #e8f0fe;
     border: 1px solid #c5d8fd; border-radius: 20px; padding: 2px 10px;
   }
 
@@ -198,17 +198,17 @@ const SHARED_CSS = `
     padding: 14px; margin-bottom: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.06);
   }
   .g-widget-label {
-    font-size: 11px; font-weight: 700; color: #70757a;
+    font-size: 16px; font-weight: 700; color: #70757a;
     text-transform: uppercase; letter-spacing: .05em; margin-bottom: 8px;
   }
-  .g-widget p { font-size: 13px; color: #70757a; line-height: 1.6; }
+  .g-widget p { font-size: 16px; color: #70757a; line-height: 1.6; }
   .g-widget-issue { margin-bottom: 10px; }
-  .g-widget-issue-title { font-size: 13px; font-weight: 500; color: #1a0dab; line-height: 1.4; margin-bottom: 2px; }
+  .g-widget-issue-title { font-size: 16px; font-weight: 500; color: #1a0dab; line-height: 1.4; margin-bottom: 2px; }
   .g-widget-issue-title:hover { text-decoration: underline; }
-  .g-widget-issue-date { font-size: 11px; color: #70757a; }
+  .g-widget-issue-date { font-size: 16px; color: #70757a; }
   .g-widget-takeaway { background: #fffbeb; border-color: #fde68a; }
   .g-widget-takeaway .g-widget-label { color: #92400e; }
-  .g-widget-takeaway p { font-size: 13px; font-weight: 500; color: #78350f; font-style: italic; }
+  .g-widget-takeaway p { font-size: 16px; font-weight: 500; color: #78350f; font-style: italic; }
 
   /* ── ARTICLE PAGE ── */
   .b-article-header { margin-bottom: 24px; }
@@ -221,35 +221,35 @@ const SHARED_CSS = `
     border-radius: 8px; padding: 18px; margin-bottom: 28px;
   }
   .b-tldr-head { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-  .b-tldr-head span { font-size: 12px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; }
+  .b-tldr-head span { font-size: 16px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; }
   .b-tldr ol { padding-left: 20px; }
   .b-tldr li { font-size: 16px; color: #202124; line-height: 1.6; margin-bottom: 5px; }
-  .b-prose p { font-size: 15px; color: #3c4043; line-height: 1.7; margin-bottom: 14px; }
+  .b-prose p { font-size: 16px; color: #3c4043; line-height: 1.7; margin-bottom: 14px; }
   .b-section { margin-bottom: 32px; }
   .b-section h2 { font-size: 18px; font-weight: 700; color: #202124; margin-bottom: 12px; }
   .b-section p { font-size: 16px; color: #3c4043; line-height: 1.7; margin-bottom: 10px; }
   .b-pm-impact { border-left: 4px solid #1a73e8; padding-left: 14px; margin-bottom: 12px; }
-  .b-pm-impact-label { font-size: 11px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
+  .b-pm-impact-label { font-size: 16px; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
   .b-example { background: #f8f9fa; border: 1px solid #dadce0; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; }
-  .b-example-label { font-size: 11px; font-weight: 700; color: #70757a; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
-  .b-example p { font-size: 13px; color: #5f6368; margin: 0; }
+  .b-example-label { font-size: 16px; font-weight: 700; color: #70757a; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+  .b-example p { font-size: 16px; color: #5f6368; margin: 0; }
   .b-action { background: #fffbeb; border: 1px solid #fde68a; border-radius: 6px; padding: 10px 14px; }
-  .b-action-label { font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
-  .b-action p { font-size: 13px; font-weight: 500; color: #78350f; margin: 0; }
+  .b-action-label { font-size: 16px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+  .b-action p { font-size: 16px; font-weight: 500; color: #78350f; margin: 0; }
   hr.b-divider { border: none; border-top: 1px solid #ebebeb; margin: 28px 0; }
   .b-takeaway {
     background: #fffbeb; border: 2px solid #fde68a;
     border-radius: 8px; padding: 24px; text-align: center; margin: 28px 0;
   }
-  .b-takeaway-label { font-size: 11px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+  .b-takeaway-label { font-size: 16px; font-weight: 700; color: #92400e; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
   .b-takeaway blockquote { font-size: 18px; font-weight: 600; color: #78350f; line-height: 1.4; max-width: 520px; margin: 0 auto; }
-  .b-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #70757a; margin-top: 28px; }
+  .b-back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; color: #70757a; margin-top: 28px; }
   .b-back-link:hover { color: #1a73e8; text-decoration: underline; }
 
   /* ── FOOTER ── */
   .g-footer {
     background: #f2f2f2; border-top: 1px solid #e0e0e0;
-    padding: 14px 20px; font-size: 13px; color: #70757a; text-align: center;
+    padding: 14px 20px; font-size: 16px; color: #70757a; text-align: center;
   }
   .g-footer a { color: #70757a; margin: 0 10px; }
   .g-footer a:hover { text-decoration: underline; }
@@ -266,7 +266,7 @@ const SHARED_CSS = `
     .g-topnav-left { display: none; }
     .g-topnav a:not(.g-signin) { display: none; }
   }
-  .dm-toggle { background:none; border:1px solid #dadce0; border-radius:20px; padding:4px 10px; font-size:12px; color:#5f6368; cursor:pointer; display:inline-flex; align-items:center; gap:5px; font-family:arial,sans-serif; }
+  .dm-toggle { background:none; border:1px solid #dadce0; border-radius:20px; padding:4px 10px; font-size: 16px; color:#5f6368; cursor:pointer; display:inline-flex; align-items:center; gap:5px; font-family:arial,sans-serif; }
   .dm-toggle:hover { background:#f1f3f4; }
   body.dark { background:#202124; color:#e8eaed; }
   body.dark .g-topnav { border-color:#3c4043; background:#202124; }
@@ -442,9 +442,9 @@ function generateListing(posts) {
         </a>
         <div class="g-result-meta">
           ${latestBadge} ${typeBadge}
-          <span style="font-size:13px;color:#70757a">${formatDate(post.generatedAt)}</span>
+          <span style="font-size: 16px;color:#70757a">${formatDate(post.generatedAt)}</span>
           <span style="color:#dadce0">·</span>
-          <span style="font-size:13px;color:#70757a">${(post.wordCount || 0).toLocaleString()} words</span>
+          <span style="font-size: 16px;color:#70757a">${(post.wordCount || 0).toLocaleString()} words</span>
         </div>
         <div class="g-result-snippet">${snippet}</div>
         <div class="g-tldr-chips">${tldrChips}</div>
@@ -573,7 +573,7 @@ function generatePost(post, allPosts) {
     </div>`).join("");
 
   const sectionTags = (post.sections || []).map(s =>
-    `<span class="g-badge g-badge-blue" style="font-size:11px">${esc(s.trend.split(" ").slice(0, 3).join(" "))}</span>`
+    `<span class="g-badge g-badge-blue" style="font-size: 16px">${esc(s.trend.split(" ").slice(0, 3).join(" "))}</span>`
   ).join(" ");
 
   return `<!DOCTYPE html>
@@ -604,7 +604,7 @@ function generatePost(post, allPosts) {
     <!-- Article -->
     <main class="g-results">
       <!-- Breadcrumb -->
-      <div style="font-size:13px;color:#70757a;margin-bottom:14px">
+      <div style="font-size: 16px;color:#70757a;margin-bottom:14px">
         <a href="../blog.html" style="color:#1a73e8">← All Issues</a>
         <span style="margin:0 6px">·</span>
         <span>${formatLongDate(post.generatedAt)}</span>
@@ -614,9 +614,9 @@ function generatePost(post, allPosts) {
         <header class="b-article-header">
           <div class="g-result-meta" style="margin-bottom:8px">
             ${typeBadge}
-            <span style="font-size:12px;color:#70757a">${formatLongDate(post.generatedAt)}</span>
+            <span style="font-size: 16px;color:#70757a">${formatLongDate(post.generatedAt)}</span>
             <span style="color:#dadce0">·</span>
-            <span style="font-size:12px;color:#70757a">${(post.wordCount || 0).toLocaleString()} words</span>
+            <span style="font-size: 16px;color:#70757a">${(post.wordCount || 0).toLocaleString()} words</span>
           </div>
           <h1>${esc(post.title)}</h1>
         </header>
@@ -636,7 +636,7 @@ function generatePost(post, allPosts) {
         <div class="b-prose">${closingParagraphs}</div>
 
         <div class="b-takeaway">
-          <div style="font-size:22px;margin-bottom:6px">💡</div>
+          <div style="font-size: 22px;margin-bottom:6px">💡</div>
           <div class="b-takeaway-label">PM Takeaway of the Week</div>
           <blockquote>"${esc(post.takeaway)}"</blockquote>
         </div>
@@ -649,7 +649,7 @@ function generatePost(post, allPosts) {
     <aside class="g-right-sidebar">
       <div class="g-widget">
         <div class="g-widget-label">This Issue</div>
-        <p style="font-weight:500;color:#202124;font-size:13px;margin-bottom:8px">${esc(post.title)}</p>
+        <p style="font-weight:500;color:#202124;font-size: 16px;margin-bottom:8px">${esc(post.title)}</p>
         <div style="display:flex;flex-wrap:wrap;gap:4px">${sectionTags}</div>
       </div>
       <div class="g-widget g-widget-takeaway">
@@ -662,7 +662,7 @@ function generatePost(post, allPosts) {
         ${sidebarOthers}
       </div>` : ""}
       <div style="margin-top:8px">
-        <a href="../blog.html" style="font-size:13px;color:#1a73e8">← All issues</a>
+        <a href="../blog.html" style="font-size: 16px;color:#1a73e8">← All issues</a>
       </div>
     </aside>
   </div>
@@ -696,32 +696,32 @@ function generateDashboard(allPosts) {
     ["Tool Guides",  toolGuides.length, "#137333", "#e6f4ea", "#b7d9c4"],
   ].map(([label, val, color, bg, border]) => `
     <div style="background:${bg};border:1px solid ${border};border-radius:8px;padding:12px 18px;min-width:110px">
-      <div style="font-size:22px;font-weight:700;color:${color}">${val}</div>
-      <div style="font-size:11px;color:#5f6368;margin-top:2px">${label}</div>
+      <div style="font-size: 22px;font-weight:700;color:${color}">${val}</div>
+      <div style="font-size: 16px;color:#5f6368;margin-top:2px">${label}</div>
     </div>`).join("");
 
   const rows = allPosts.map(post => {
     const isPublished = post.status === "published";
     const statusBadge = isPublished
-      ? `<span style="background:#e6f4ea;color:#137333;border:1px solid #b7d9c4;border-radius:20px;font-size:11px;padding:2px 8px;font-weight:500">Published</span>`
-      : `<span style="background:#fef9c3;color:#b06000;border:1px solid #fde68a;border-radius:20px;font-size:11px;padding:2px 8px;font-weight:500">Draft</span>`;
+      ? `<span style="background:#e6f4ea;color:#137333;border:1px solid #b7d9c4;border-radius:20px;font-size: 16px;padding:2px 8px;font-weight:500">Published</span>`
+      : `<span style="background:#fef9c3;color:#b06000;border:1px solid #fde68a;border-radius:20px;font-size: 16px;padding:2px 8px;font-weight:500">Draft</span>`;
     const typeBadge = post.postType === "tool-guide"
-      ? `<span style="background:#e6f4ea;color:#137333;border:1px solid #b7d9c4;border-radius:20px;font-size:11px;padding:2px 8px">🔧 Tool</span>`
-      : `<span style="background:#e8f0fe;color:#1a73e8;border:1px solid #c5d8fd;border-radius:20px;font-size:11px;padding:2px 8px">📈 Trends</span>`;
+      ? `<span style="background:#e6f4ea;color:#137333;border:1px solid #b7d9c4;border-radius:20px;font-size: 16px;padding:2px 8px">🔧 Tool</span>`
+      : `<span style="background:#e8f0fe;color:#1a73e8;border:1px solid #c5d8fd;border-radius:20px;font-size: 16px;padding:2px 8px">📈 Trends</span>`;
     const actions = isPublished
-      ? `<a href="blog-posts/${esc(post.slug)}.html" style="color:#1a73e8;font-size:12px">View ↗</a>`
-      : `<button onclick="publishPost('${esc(post.slug)}')" style="font-size:11px;font-weight:500;color:#137333;background:#e6f4ea;border:1px solid #b7d9c4;border-radius:4px;padding:3px 10px;cursor:pointer">Publish</button>`;
+      ? `<a href="blog-posts/${esc(post.slug)}.html" style="color:#1a73e8;font-size: 16px">View ↗</a>`
+      : `<button onclick="publishPost('${esc(post.slug)}')" style="font-size: 16px;font-weight:500;color:#137333;background:#e6f4ea;border:1px solid #b7d9c4;border-radius:4px;padding:3px 10px;cursor:pointer">Publish</button>`;
 
     return `
       <tr style="border-bottom:1px solid #ebebeb">
         <td style="padding:12px 14px;max-width:300px">
-          <div style="font-size:13px;font-weight:500;color:#202124;line-height:1.4;margin-bottom:3px">${esc(post.title)}</div>
-          <div style="font-size:11px;color:#70757a;font-family:monospace">${esc(post.slug)}</div>
+          <div style="font-size: 16px;font-weight:500;color:#202124;line-height:1.4;margin-bottom:3px">${esc(post.title)}</div>
+          <div style="font-size: 16px;color:#70757a;font-family:monospace">${esc(post.slug)}</div>
         </td>
         <td style="padding:12px 14px;white-space:nowrap">${typeBadge}</td>
-        <td style="padding:12px 14px;white-space:nowrap;font-size:12px;color:#5f6368">${formatDate(post.generatedAt)}</td>
+        <td style="padding:12px 14px;white-space:nowrap;font-size: 16px;color:#5f6368">${formatDate(post.generatedAt)}</td>
         <td style="padding:12px 14px">${statusBadge}</td>
-        <td style="padding:12px 14px;font-size:12px;color:#5f6368;white-space:nowrap">${(post.wordCount || 0).toLocaleString()} words</td>
+        <td style="padding:12px 14px;font-size: 16px;color:#5f6368;white-space:nowrap">${(post.wordCount || 0).toLocaleString()} words</td>
         <td style="padding:12px 14px">${actions}</td>
       </tr>`;
   }).join("");
@@ -739,17 +739,17 @@ function generateDashboard(allPosts) {
   <style>
     ${SHARED_CSS}
     table { width: 100%; border-collapse: collapse; }
-    th { text-align:left; font-size:11px; font-weight:700; color:#70757a; text-transform:uppercase; letter-spacing:.05em; padding:8px 14px; border-bottom:2px solid #dadce0; }
-    .dash-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:4px; font-size:13px; font-weight:500; cursor:pointer; border:none; transition:background .15s; }
+    th { text-align:left; font-size: 16px; font-weight:700; color:#70757a; text-transform:uppercase; letter-spacing:.05em; padding:8px 14px; border-bottom:2px solid #dadce0; }
+    .dash-btn { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:4px; font-size: 16px; font-weight:500; cursor:pointer; border:none; transition:background .15s; }
     .dash-btn-primary { background:#1a73e8; color:#fff; }
     .dash-btn-primary:hover { background:#1557b0; }
     .dash-btn-primary:disabled { background:#8ab4f8; cursor:not-allowed; }
-    select, .dash-select { font-size:13px; color:#202124; border:1px solid #dadce0; border-radius:4px; padding:7px 10px; background:#fff; cursor:pointer; }
-    .toast { position:fixed; bottom:24px; right:24px; padding:12px 20px; border-radius:8px; font-size:13px; font-weight:500; box-shadow:0 4px 12px rgba(0,0,0,.15); z-index:999; display:none; }
+    select, .dash-select { font-size: 16px; color:#202124; border:1px solid #dadce0; border-radius:4px; padding:7px 10px; background:#fff; cursor:pointer; }
+    .toast { position:fixed; bottom:24px; right:24px; padding:12px 20px; border-radius:8px; font-size: 16px; font-weight:500; box-shadow:0 4px 12px rgba(0,0,0,.15); z-index:999; display:none; }
     .toast.success { background:#e6f4ea; color:#137333; border:1px solid #b7d9c4; }
     .toast.error   { background:#fce8e6; color:#c5221f; border:1px solid #f5c6c4; }
     .toast.loading { background:#e8f0fe; color:#1a73e8; border:1px solid #c5d8fd; }
-    #serverStatus { font-size:11px; font-weight:500; padding:2px 8px; border-radius:20px; display:inline-block; }
+    #serverStatus { font-size: 16px; font-weight:500; padding:2px 8px; border-radius:20px; display:inline-block; }
     #serverStatus.online  { background:#e6f4ea; color:#137333; border:1px solid #b7d9c4; }
     #serverStatus.offline { background:#fce8e6; color:#c5221f; border:1px solid #f5c6c4; }
   </style>
@@ -781,7 +781,7 @@ function generateDashboard(allPosts) {
 
       <!-- Generate Post -->
       <div style="background:#fff;border:1px solid #dadce0;border-radius:8px;padding:18px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
-        <div style="font-size:13px;font-weight:700;color:#202124;margin-bottom:12px">✨ Generate New Post</div>
+        <div style="font-size: 16px;font-weight:700;color:#202124;margin-bottom:12px">✨ Generate New Post</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
           <select id="postType" class="dash-select">
             <option value="">Auto (pick type)</option>
@@ -796,7 +796,7 @@ function generateDashboard(allPosts) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Generate Post
           </button>
-          <span style="font-size:12px;color:#70757a">Saves as draft · requires <code style="background:#f8f9fa;padding:1px 4px;border-radius:3px">node server.js</code> running</span>
+          <span style="font-size: 16px;color:#70757a">Saves as draft · requires <code style="background:#f8f9fa;padding:1px 4px;border-radius:3px">node server.js</code> running</span>
         </div>
       </div>
 
@@ -816,7 +816,7 @@ function generateDashboard(allPosts) {
         </table>
       </div>
 
-      <div style="margin-top:14px;padding:12px 16px;background:#f8f9fa;border:1px solid #dadce0;border-radius:8px;font-size:12px;color:#5f6368">
+      <div style="margin-top:14px;padding:12px 16px;background:#f8f9fa;border:1px solid #dadce0;border-radius:8px;font-size: 16px;color:#5f6368">
         To start the server: open a terminal in <code style="background:#fff;padding:1px 5px;border-radius:3px;border:1px solid #dadce0">Portfolio/</code> and run <code style="background:#fff;padding:1px 5px;border-radius:3px;border:1px solid #dadce0">node server.js</code>. Static files update automatically after each action.
       </div>
     </main>
