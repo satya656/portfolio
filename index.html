@@ -35,20 +35,6 @@
       font-size: 16px;
     }
     .g-topnav a:hover { text-decoration: underline; color: #202124; }
-    .g-topnav-left {
-      display: flex;
-      gap: 20px;
-      margin-right: auto;
-    }
-    .g-signin {
-      background: #1a73e8;
-      color: #fff !important;
-      padding: 8px 18px;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: 500;
-    }
-    .g-signin:hover { background: #1557b0; text-decoration: none !important; }
 
     /* ── HEADER ── */
     .g-header {
@@ -131,9 +117,9 @@
 
     /* ── LEFT SIDEBAR ── */
     .g-sidebar {
-      width: 154px;
+      width: 190px;
       flex-shrink: 0;
-      padding: 18px 30px 0 0;
+      padding: 18px 24px 0 0;
     }
     .g-sidebar-photo {
       width: 90px; height: 90px;
@@ -169,6 +155,7 @@
       margin-bottom: 14px;
       border-top: 1px solid #ebebeb;
       padding-top: 12px;
+      word-break: break-all;
     }
     .g-sidebar-contact a { color: #1a0dab; }
     .g-sidebar-contact a:hover { text-decoration: underline; }
@@ -261,7 +248,7 @@
       display: inline-flex; align-items: center; gap: 4px;
       background: #f8f9fa; border: 1px solid #dadce0;
       border-radius: 14px; padding: 4px 12px;
-      font-size: 16px; color: #202124; cursor: pointer; white-space: nowrap;
+      font-size: 14px; color: #202124; cursor: pointer; white-space: nowrap;
     }
     .g-kw:hover { background: #e8f0fe; border-color: #1a73e8; color: #1a73e8; }
     .g-kw-icon { font-size: 16px; }
@@ -507,8 +494,6 @@
       .g-search-btn { display: none; }
       .g-body { padding: 0 12px; }
       .g-topnav { padding: 6px 12px; }
-      .g-topnav-left { display: none; }
-      .g-topnav a:not(.g-signin) { display: none; }
       .g-result-title { font-size: 17px; }
       .g-stat-grid { grid-template-columns: repeat(2, 1fr); }
       .g-flip-grid { grid-template-columns: 1fr; }
@@ -605,12 +590,6 @@
 
 <!-- TOP NAV -->
 <div class="g-topnav" id="topnav">
-  <div class="g-topnav-left">
-    <a href="#">Resume</a>
-    <a href="#">References</a>
-    <a href="#">Portfolio</a>
-    <a href="#">more ▾</a>
-  </div>
   <!-- filled by JS -->
 </div>
 
@@ -643,9 +622,6 @@
   </a>
   <a href="https://www.linkedin.com/in/satyanarayans/" target="_blank" class="g-tab" id="tab-linkedin">
     <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/>LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:11px;height:11px;margin-left:2px;opacity:0.6"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-  </a>
-  <a href="dashboard.html" class="g-tab g-tab-sep">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>Manage
   </a>
 </nav>
 
@@ -693,7 +669,7 @@ function renderTopNav(c) {
       <img src="https://www.google.com/s2/favicons?domain=linkedin.com&sz=16" style="width:14px;height:14px;border-radius:2px" alt=""/> LinkedIn
     </a>
     <button class="dm-toggle" onclick="toggleDarkMode()" id="dm-btn">🌙 Dark</button>
-    <a class="g-signin" href="tel:${esc(p.phone.replace(/-/g,''))}">${esc(p.phone)}</a>
+    <a href="tel:${esc(p.phone.replace(/-/g,''))}" style="color:#5f6368;font-weight:500">${esc(p.phone)}</a>
   `);
 }
 
