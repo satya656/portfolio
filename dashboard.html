@@ -803,6 +803,23 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
           Save Schedule
         </button>
+
+        <!-- Ad-hoc generate -->
+        <div style="background:#fff;border:1px solid #dadce0;border-radius:8px;padding:18px;margin-top:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)">
+          <div style="font-size:13px;font-weight:700;color:#202124;margin-bottom:12px">⚡ Generate Now (Ad-hoc)</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <select id="adhoc-type" class="dash-select">
+              <option value="">Auto (pick type)</option>
+              <option value="trends">📈 AI Trends</option>
+              <option value="tool-guide">🔧 Tool Guide</option>
+            </select>
+            <input id="adhoc-topic" class="cms-input" type="text" placeholder="Topic hint (optional)" style="flex:1;min-width:180px;margin-top:0" />
+            <button id="adhocBtn" class="dash-btn dash-btn-primary" onclick="generateAdhoc()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Generate Now
+            </button>
+          </div>
+        </div>
       </div><!-- /#dash-schedule -->
 
     </main>
@@ -1106,6 +1123,27 @@
           loadSchedule();
         } else { showToast('Error saving schedule', 'error'); }
       } catch (e) { showToast('Save failed: ' + e.message, 'error'); }
+    }
+
+    async function generateAdhoc() {
+      const type  = document.getElementById('adhoc-type').value;
+      const topic = document.getElementById('adhoc-topic').value.trim();
+      const btn   = document.getElementById('adhocBtn');
+      btn.textContent = 'Generating…';
+      btn.disabled = true;
+      try {
+        const res = await authFetch(API + '/api/generate', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type, topic }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          showToast('✓ Post generated as draft. Refreshing…', 'success');
+          setTimeout(() => { loadPosts(); }, 2500);
+        } else { showToast(data.message || 'Generation failed', 'error'); }
+      } catch (e) { showToast('Error: ' + e.message, 'error'); }
+      btn.textContent = 'Generate Now';
+      btn.disabled = false;
     }
 
     // ── Show/hide tool selector ──────────────────────────────────────────────
