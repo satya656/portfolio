@@ -35,6 +35,16 @@ const PORTFOLIO_CONTENT_FILE = path.join(DATA_DIR, "portfolio-content.json");
 const SCHEDULE_FILE = path.join(DATA_DIR, "schedule.json");
 const PORT = process.env.PORT || 3001;
 
+// Seed portfolio-content.json into DATA_DIR on first run if missing
+if (!fs.existsSync(PORTFOLIO_CONTENT_FILE)) {
+  const localSrc = path.join(__dirname, "portfolio-content.json");
+  if (fs.existsSync(localSrc)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.copyFileSync(localSrc, PORTFOLIO_CONTENT_FILE);
+    console.log(`[init] Seeded portfolio-content.json to ${PORTFOLIO_CONTENT_FILE}`);
+  }
+}
+
 // ── Basic Auth ─────────────────────────────────────────────────────────────────
 const DASH_USER = process.env.DASHBOARD_USER || "admin";
 const DASH_PASS = process.env.DASHBOARD_PASS || "changeme";
