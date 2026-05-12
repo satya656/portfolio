@@ -28,8 +28,9 @@ if (!process.env.ANTHROPIC_API_KEY) {
     }
   }
 }
-const POSTS_DIR = path.join(__dirname, "..", "posts");
-const LOGS_DIR = path.join(__dirname, "..", "logs");
+const ROOT_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, "..");
+const POSTS_DIR = path.join(ROOT_DIR, "posts");
+const LOGS_DIR = path.join(ROOT_DIR, "logs");
 
 // ─── CLI flags ────────────────────────────────────────────────────────────────
 const isPublish = process.argv.includes("--publish");
