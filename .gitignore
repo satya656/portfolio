@@ -5,6 +5,4 @@ node_modules/
 logs/
 *.log
 .claude/
-blog/
-ai-pm-blog/
 .next/
