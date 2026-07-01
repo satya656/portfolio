@@ -1,0 +1,53 @@
+{
+  "title": "AI Agents Are Eating Product Discovery (Plus 4 Other Trends PMs Can't Ignore)",
+  "tldr": [
+    "AI agents now handle user research and competitive analysis autonomously",
+    "Real-time personalization requires new product metrics and testing approaches",
+    "Voice interfaces are replacing traditional product onboarding flows"
+  ],
+  "intro": "The AI product management landscape shifted dramatically in the past month. GPT-5's planning capabilities, Claude's new reasoning modes, and breakthrough agent frameworks changed how we build products. Three new unicorns emerged from companies that replaced traditional PM workflows with AI-first approaches. The question isn't whether AI will change product management anymore. It's how fast you can adapt your team's processes before your competitors do.",
+  "sections": [
+    {
+      "trend": "🤖 Autonomous Product Discovery",
+      "what": "AI agents now conduct user interviews, analyze competitor features, and generate PRDs without human oversight. The latest agent frameworks can schedule calls with users, run usability tests, and synthesize insights into actionable recommendations. These systems process qualitative feedback at scale and identify patterns humans miss. They work 24/7 across time zones, gathering continuous user feedback that updates product roadmaps in real-time.",
+      "pmImpact": "Your discovery process just compressed from weeks to hours. Instead of running five user interviews, you can analyze hundreds of interactions daily. This changes your role from researcher to strategy curator. You'll spend less time collecting data and more time deciding which insights to act on. The PM who learns to work with these agents will ship features that competitors are still researching. But you need new frameworks for validating AI-generated insights before building.",
+      "example": "Notion's new AI research assistant interviews users about workflow pain points and automatically updates their feature priority matrix. Their PM team reviews agent recommendations weekly instead of running monthly user research cycles.",
+      "action": "Test one AI agent tool for user research this week. Start with something simple like automated survey analysis or competitor feature tracking."
+    },
+    {
+      "trend": "⚡ Real-Time Product Personalization",
+      "what": "New inference engines can personalize product experiences in milliseconds, not minutes. Every user action triggers instant UI adjustments, feature recommendations, and content changes. The technology moved beyond A/B testing to continuous optimization that adapts to individual user behavior patterns. Products now learn and evolve for each user session, creating millions of unique product variations simultaneously.",
+      "pmImpact": "Traditional product metrics break when every user sees a different product. You can't measure conversion rates the same way when the product changes constantly. Your analytics stack needs rebuilding around cohort behavior and personalization effectiveness. Product roadmaps become less about shipping features and more about defining personalization rules. You'll manage optimization algorithms instead of static feature sets. Success metrics shift from aggregate performance to individual user satisfaction scores.",
+      "example": "Spotify's new real-time interface changes based on listening patterns, mood detection, and even time of day. Their PMs now manage personalization algorithms rather than fixed playlist features.",
+      "action": "Audit your current metrics to identify which ones break under personalization. Design new measurement frameworks for individualized product experiences."
+    },
+    {
+      "trend": "🎯 Predictive Feature Prioritization",
+      "what": "Machine learning models now predict feature impact before you build anything. These systems analyze user behavior patterns, market trends, and technical complexity to forecast which features will drive growth. They simulate user adoption scenarios and calculate ROI probabilities for different development paths. The models update predictions as new data arrives, continuously reranking your backlog based on changing user needs.",
+      "pmImpact": "Your gut instincts about feature priority get replaced by data-driven predictions. You can test feature concepts without writing code or running expensive user research. Resource allocation becomes more scientific, reducing the risk of building features nobody wants. But you need to understand model limitations and know when human judgment should override AI recommendations. The PM skill becomes interpreting AI predictions and making strategic bets based on incomplete information.",
+      "example": "Linear's feature prioritization AI analyzes user voting, usage patterns, and engineering complexity to automatically reorder their product backlog. Their PM team focuses on strategic decisions while AI handles tactical prioritization.",
+      "action": "Implement a simple feature scoring model using historical data. Track prediction accuracy to build confidence in AI-driven prioritization."
+    },
+    {
+      "trend": "🗣️ Voice-First Product Experiences",
+      "what": "Advanced voice interfaces now handle complex product interactions that previously required visual interfaces. Users complete multi-step workflows, navigate complex menus, and provide detailed feedback through natural conversation. The technology understands context, maintains conversation state, and learns individual user preferences. Voice becomes the primary interface for many product categories, especially in mobile and hands-free environments.",
+      "pmImpact": "Your product needs voice interaction design from day one, not as an afterthought. Traditional user flows break when users can skip steps through natural language commands. Onboarding sequences shrink dramatically when users can ask questions instead of clicking through tutorials. You'll design conversation flows alongside user interface mockups. Error handling becomes conversational problem-solving rather than displaying error messages. Accessibility improves dramatically, but you need new testing approaches for voice interactions.",
+      "example": "Figma's voice interface lets designers create and modify layouts through spoken commands. Users say 'make the button bigger and move it right' instead of using mouse interactions.",
+      "action": "Record yourself explaining your product's core workflow out loud. Identify which steps could work better through voice commands than clicks."
+    },
+    {
+      "trend": "📊 AI-Generated Product Analytics",
+      "what": "Analytics platforms now write their own insights instead of requiring manual analysis. AI systems automatically identify significant trends, anomalies, and opportunities in product data. They generate natural language summaries of user behavior changes and recommend specific actions. The technology connects disparate data sources to reveal patterns that traditional dashboards miss. Weekly reports write themselves, highlighting the metrics that matter most for current business objectives.",
+      "pmImpact": "Your time spent staring at dashboards drops to near zero. Instead of building charts, you'll ask questions and get instant analysis. Insights arrive proactively when important changes happen, rather than during scheduled review meetings. You can focus on strategic decisions instead of data interpretation. But you need to develop better questions to ask AI analysts and learn to spot when automated insights miss important context. The skill becomes knowing which questions to ask, not how to build the perfect dashboard.",
+      "example": "Amplitude's AI analyst automatically detected that users who complete onboarding on weekends have 40% higher retention and recommended targeting weekend traffic with specific campaigns.",
+      "action": "Set up one automated insight alert in your analytics tool. Start with a simple metric change that should trigger strategic decisions."
+    }
+  ],
+  "closing": "These trends converge toward a future where PMs spend less time on analysis and more time on strategy. The teams that adapt their processes now will build better products faster than competitors still doing manual research and gut-check prioritization. The transition won't be smooth, but the advantage goes to PMs who start experimenting today.",
+  "takeaway": "AI isn't replacing product managers, but product managers using AI are replacing those who don't.",
+  "postType": "trends",
+  "slug": "ai-agents-are-eating-product-discovery-plus-4-other-trends-pms-cant-ignore",
+  "generatedAt": "2026-05-18T13:53:55.072Z",
+  "status": "draft",
+  "wordCount": 173
+}

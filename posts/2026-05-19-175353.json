@@ -1,0 +1,53 @@
+{
+  "title": "Why Your Product Roadmap Just Got Easier (And Scarier)",
+  "tldr": [
+    "AI agents now ship features while you sleep",
+    "Real-time user feedback loops replace quarterly surveys",
+    "Context windows got so big they remember your entire codebase"
+  ],
+  "intro": "The last six months changed everything about how we build products. GPT-5's 2M token context window means AI can read your entire repository and suggest features that actually make sense. Claude's new function calling lets it write PRDs, update Jira, and ping Slack when user sentiment drops below 4.2 stars.\n\nMeanwhile, your engineering team just deployed an AI agent that ships bug fixes without human approval. Your biggest competitor launched three features last month using AI-generated user research. The pace isn't slowing down.",
+  "sections": [
+    {
+      "trend": "🤖 Autonomous Feature Development",
+      "what": "AI agents now write code, test it, and deploy features end-to-end. GitHub's Copilot Workspace evolved into full development agents that take a feature request and ship working code. These aren't coding assistants anymore. They're junior developers who never sleep, never get frustrated, and cost $50 per month.\n\nThe quality bar crossed the threshold where simple features ship faster through AI than through human developers. Linear's new AI agent shipped their mobile notifications feature in 18 hours. No standup meetings. No code reviews. Just working software.",
+      "pmImpact": "Your job shifts from writing detailed specs to setting guardrails. Instead of explaining what you want built, you explain what you don't want built. Risk management becomes your primary skill, not feature definition.\n\nYour backlog moves faster than ever, but technical debt compounds differently. AI agents optimize for working code, not maintainable code. You need new metrics for measuring AI-generated feature quality and new processes for rolling back autonomous deployments.",
+      "example": "Vercel's AI agent shipped their new analytics dashboard feature in March 2026 without human developer input. The PM provided user stories, the agent built the feature, ran tests, and deployed to production. User adoption hit 40% in the first week.",
+      "action": "Set up automated rollback triggers for AI-generated features based on user engagement metrics, not just error rates."
+    },
+    {
+      "trend": "📊 Real-Time Product Intelligence",
+      "what": "Product analytics evolved beyond dashboards into conversational intelligence. You ask your product questions in plain English and get answers backed by real user data. Amplitude's new AI layer analyzes user behavior patterns in real-time and surfaces insights before you know to look for them.\n\nThe feedback loop shortened from weeks to minutes. AI monitors user sentiment across support tickets, app reviews, social media, and in-app behavior. When satisfaction drops, you know within the hour, not the quarter.",
+      "pmImpact": "Data-driven decisions happen faster, but you need better instincts about which insights to act on. AI surfaces hundreds of micro-trends daily. Your skill becomes pattern recognition: which signals predict actual user needs versus noise.\n\nUser research transforms from scheduled interviews to continuous conversation. AI synthesizes thousands of user interactions into product insights. Your research team focuses on strategic questions while AI handles tactical feedback analysis.",
+      "example": "Figma's AI detected that users struggled with their new component system within 6 hours of release. The system analyzed cursor movements, support ticket sentiment, and community forum posts to recommend specific UI changes.",
+      "action": "Connect your analytics platform to a Slack channel that alerts you when user satisfaction drops 15% below baseline in any feature area."
+    },
+    {
+      "trend": "🧠 Infinite Context Product Memory",
+      "what": "Large language models now remember your entire product history. GPT-5's 2 million token context window holds every PRD, user interview, and design decision from the last two years. AI assistants become institutional memory that never leaves the company.\n\nThis context powers better product decisions. AI references past user research when evaluating new features. It spots patterns between successful launches and failed experiments. Your product knowledge compounds rather than walking out the door with departing team members.",
+      "pmImpact": "New team members onboard faster because AI explains not just what features exist, but why they were built and how they performed. You spend less time re-explaining decisions and more time making new ones.\n\nProduct strategy gets more consistent across teams. AI spots when proposed features contradict earlier user research or conflict with established product principles. Your product vision stays coherent even as the team grows.",
+      "example": "Notion's product AI references three years of user interview transcripts when evaluating feature requests. It flagged that their proposed calendar feature contradicted user feedback from 2024 about wanting simpler, not more complex workflows.",
+      "action": "Upload your last 12 months of PRDs, user research, and retrospective notes into Claude Projects to create your team's product memory system."
+    },
+    {
+      "trend": "⚡ AI-Native User Interfaces",
+      "what": "The best new products don't have traditional interfaces. They use AI to understand user intent and adapt their UI in real-time. Cursor's editor changes its interface based on what you're trying to code. Linear's project views reorganize automatically based on your team's working patterns.\n\nUsers expect products to learn their preferences without explicit configuration. Static interfaces feel broken compared to AI that predicts what you need next. The interaction paradigm shifted from clicking through menus to conversing with intelligent software.",
+      "pmImpact": "UI/UX design becomes dynamic rather than fixed. You design behavior patterns instead of screen layouts. Your design system needs to accommodate interfaces that change based on user context and AI recommendations.\n\nUser onboarding disappears because products adapt to users instead of teaching users to adapt to products. Your success metrics shift from task completion rates to user satisfaction with AI predictions. Getting AI personality right becomes as important as getting the feature right.",
+      "example": "Superhuman's AI reorganizes your email interface throughout the day. Morning layout prioritizes urgent messages. Afternoon view surfaces follow-ups. Evening mode hides work emails entirely. Users report 30% less email stress.",
+      "action": "Identify your product's most repetitive user workflow and prototype an AI assistant that predicts the next three steps."
+    },
+    {
+      "trend": "🔄 Continuous Product Experimentation",
+      "what": "AI runs dozens of product experiments simultaneously without human oversight. It generates variations of features, runs A/B tests, and ships winning versions automatically. Split testing evolved from comparing two options to exploring hundreds of micro-variations.\n\nExperiment velocity increased 10x because AI generates hypotheses, designs tests, and analyzes results faster than human teams. Your product evolves continuously rather than in discrete releases. Every user interaction becomes a data point for optimization.",
+      "pmImpact": "Product management becomes experiment design rather than feature specification. You set success criteria and constraints while AI explores the solution space. Your intuition about user preferences matters less than your ability to design good experiments.\n\nShipping decisions happen automatically based on statistical significance rather than team consensus. You need new governance models for AI-driven product changes and better systems for understanding why certain experiments succeeded.",
+      "example": "Discord's AI runs 200+ UI experiments daily, testing button placement, color schemes, and interaction patterns. Their notification system improved 23% over six months through continuous micro-optimizations no human would have tested.",
+      "action": "Choose one existing feature and set up automated A/B testing for three small variations, with auto-shipping rules based on engagement metrics."
+    }
+  ],
+  "closing": "These trends compound. AI agents that ship features use real-time intelligence to inform their decisions. Products with infinite memory run better experiments. The PMs who adapt fastest will build products that feel magical to users and efficient to teams.\n\nThe next six months will separate PMs who embrace AI-augmented product development from those who treat AI as a fancy search engine. Your users won't wait for you to catch up.",
+  "takeaway": "Product management became less about managing features and more about managing AI that manages features.",
+  "postType": "trends",
+  "slug": "why-your-product-roadmap-just-got-easier-and-scarier",
+  "generatedAt": "2026-05-19T21:54:45.248Z",
+  "status": "draft",
+  "wordCount": 202
+}

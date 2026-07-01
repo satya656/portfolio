@@ -1,0 +1,53 @@
+{
+  "title": "AI Agents Are Coming for Your Backlog (And Your Job Description)",
+  "tldr": [
+    "AI agents can now execute multi-step workflows autonomously",
+    "Real-time personalization happens at the moment of user interaction",
+    "PMs are becoming AI orchestrators rather than feature factories"
+  ],
+  "intro": "The AI tools you learned six months ago are already obsolete. While you were getting comfortable with ChatGPT for user research and Claude for PRDs, the next wave hit. AI agents that can complete entire workflows. Real-time personalization that adapts per user interaction. Code generation that ships features faster than your sprint cycles.\n\nThis isn't about efficiency gains anymore. It's about fundamental changes to what product management means. Some PMs will adapt and become more strategic. Others will find their role automated away.",
+  "sections": [
+    {
+      "trend": "🤖 Autonomous AI Agents",
+      "what": "AI agents can now handle multi-step workflows without human intervention. They research competitors, analyze user feedback, write requirements, and even coordinate with engineering teams. These aren't chatbots that answer questions. They're systems that complete entire projects.\n\nThe breakthrough came from better reasoning models and improved tool integration. Agents can use your existing software stack, make decisions based on context, and learn from outcomes. They're particularly strong at research-heavy tasks and process automation.",
+      "pmImpact": "Your role shifts from doing work to orchestrating work. Instead of spending hours on competitive analysis, you define what good analysis looks like and let agents execute. Instead of writing every PRD, you review and refine agent-generated requirements.\n\nThis creates two paths for PMs. Those who embrace orchestration become more strategic and impactful. Those who resist become bottlenecks in an increasingly automated workflow. The key is knowing which decisions to delegate and which require human judgment.",
+      "example": "Linear's PM team uses custom agents to analyze support tickets, identify feature gaps, and draft initial requirements. The agents surface patterns humans miss and generate first-draft specs that PMs then refine and approve.",
+      "action": "Identify your most repetitive research task this week and prototype an AI agent to handle it using tools like Zapier Central or Microsoft Copilot Studio."
+    },
+    {
+      "trend": "⚡ Real-Time Adaptive Interfaces",
+      "what": "Products now personalize interfaces in real-time based on user behavior, context, and intent. Not just showing different content, but actually changing how features work, what options appear, and how workflows function. The UI becomes fluid and user-specific.\n\nThis is possible because of faster inference speeds and better context understanding. AI can process user signals instantly and modify interfaces without latency. The result is products that feel less like software and more like responsive tools that adapt to each person's needs.",
+      "pmImpact": "Traditional user personas and fixed user flows become less relevant. You need to think in terms of behavioral patterns and adaptive experiences. Feature specifications become guidelines rather than exact requirements, because the actual user experience varies by person and context.\n\nThis requires new skills in defining adaptation rules and success metrics. You're not just shipping features, you're shipping systems that learn and adjust. A/B testing becomes continuous optimization rather than discrete experiments.",
+      "example": "Notion's AI now reorganizes workspace layouts based on how individual users actually work, surfacing relevant databases and hiding unused features. Each user sees a different interface optimized for their workflow patterns.",
+      "action": "Map one user journey in your product and identify three points where real-time personalization could improve the experience, then discuss technical feasibility with your engineering team."
+    },
+    {
+      "trend": "🔧 AI-Native Development Workflows",
+      "what": "Engineering teams now use AI for the entire development lifecycle, from requirements to deployment. AI generates code, writes tests, handles code reviews, and even deploys features. Development cycles that used to take weeks now happen in days.\n\nThe productivity gains are dramatic, but they change how product and engineering collaborate. Engineers can prototype ideas faster, but they also need clearer direction about what to build. The bottleneck shifts from coding speed to decision-making speed.",
+      "pmImpact": "Your engineering partnership becomes more collaborative and fast-paced. Engineers can quickly build multiple versions of a feature, so your job becomes choosing between options rather than waiting for one implementation. You need to provide clearer requirements because iteration happens so quickly.\n\nResource planning becomes harder to predict but more flexible. Small features ship faster, but complex features still require human architecture decisions. You'll need to adapt your roadmapping to account for this uneven acceleration.",
+      "example": "Cursor and similar AI coding tools let Vercel's engineering team prototype new dashboard features in hours instead of days, allowing PMs to test user reactions to multiple approaches before committing to development.",
+      "action": "Schedule time with your engineering lead this week to understand which parts of your development process could accelerate with AI tooling and adjust your sprint planning accordingly."
+    },
+    {
+      "trend": "📊 Predictive Product Analytics",
+      "what": "Analytics platforms now predict user behavior and business outcomes before they happen. Instead of analyzing what users did last week, you see what they're likely to do next month. Churn prediction, feature adoption forecasts, and revenue projections become standard product insights.\n\nThese predictions are surprisingly accurate because they combine user behavior data with broader patterns across similar products and user segments. The AI learns from both your specific product and general user behavior trends.",
+      "pmImpact": "You can be proactive instead of reactive with product decisions. Instead of responding to churn after it happens, you identify at-risk users weeks in advance. Instead of guessing which features will drive engagement, you have data-driven forecasts.\n\nThis changes how you prioritize work and communicate with stakeholders. You can make commitments based on predicted outcomes rather than hopes. But you also need to develop judgment about when to trust predictions and when human intuition matters more.",
+      "example": "Amplitude's new predictive features help Spotify's PM team identify which users will likely churn in the next 30 days and what features might retain them, leading to proactive intervention campaigns.",
+      "action": "Review your current analytics setup and identify one key business metric where predictive insights would change your product decisions, then research tools that provide those forecasts."
+    },
+    {
+      "trend": "🎯 AI-Powered User Research at Scale",
+      "what": "AI can now conduct user interviews, analyze feedback from thousands of users simultaneously, and identify insights that human researchers miss. It's not replacing user researchers, but it's making research faster and more comprehensive.\n\nThe AI handles the mechanical parts of research while humans focus on the strategic parts. AI transcribes and analyzes interviews, finds patterns across large datasets, and even generates research questions based on your product goals. Researchers become insight strategists rather than data processors.",
+      "pmImpact": "You can research more thoroughly and frequently than before. Instead of monthly user interviews with 10 people, you can get insights from hundreds of users continuously. Instead of waiting weeks for research results, you get patterns identified in real-time.\n\nBut you need stronger skills in asking the right questions and interpreting complex insights. The volume of research insights increases dramatically, so your ability to synthesize and act on research becomes the limiting factor.",
+      "example": "Miro uses AI to analyze thousands of user session recordings and support conversations, identifying friction points that traditional user research missed, leading to interface improvements that increased new user activation by 23%.",
+      "action": "Test an AI user research tool like Maze AI or UserVoice's AI insights on one recent user feedback dataset to see what patterns you might have missed."
+    }
+  ],
+  "closing": "These trends point toward a future where PMs spend less time on execution and more time on strategy and judgment. The mechanical parts of product management are becoming automated, which means the human parts become more valuable.\n\nThe PMs who thrive will be those who can orchestrate AI tools effectively while maintaining strong product intuition. The ones who resist will find themselves increasingly irrelevant as their tasks get automated away.",
+  "takeaway": "Your job isn't disappearing, but it's definitely changing faster than you think.",
+  "postType": "trends",
+  "slug": "ai-agents-are-coming-for-your-backlog-and-your-job-description",
+  "generatedAt": "2026-05-18T21:54:40.627Z",
+  "status": "draft",
+  "wordCount": 202
+}
